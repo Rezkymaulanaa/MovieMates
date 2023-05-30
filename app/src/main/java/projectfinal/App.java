@@ -4,19 +4,56 @@
 package projectfinal;
 
 import javafx.application.Application;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.StackPane;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class App extends Application {
+    private Stage stage;
 
     @Override
-    public void start(Stage stage) {
-        Label l = new Label("Hello Movie Mates");
-        Scene scene = new Scene(new StackPane(l), 640, 480);
-        stage.setScene(scene);
+    public void start(Stage PrimaryStage) {
+        stage = PrimaryStage;
+        stage.setTitle("MovieMates");
+        Login();
         stage.show();
+    }
+
+    private void Login() {
+        
+        Label title = new Label("Hello MovieMates");
+        Label name = new Label("Set your name");
+
+        TextField inputName = new TextField();
+        inputName.setMaxWidth(200);
+
+        Button start = new Button("Start");
+        start.setOnAction(action -> HomePage());
+
+        VBox apptitle = new VBox();
+        apptitle.getChildren().add(title);
+        apptitle.setAlignment(Pos.TOP_CENTER);
+
+        VBox root = new VBox();
+        root.getChildren().addAll( apptitle , name , inputName , start);
+        root.setAlignment(Pos.CENTER);
+        root.setSpacing(20);
+        VBox.setMargin(root, new Insets(50, 0, 0, 0));
+
+        Scene scene = new Scene(root , 450 , 500);
+        stage.setScene(scene);
+        
+    }
+
+    private void HomePage() {
+
+        Scene scene = new Scene(new VBox() , 450 , 500);
+        stage.setScene(scene);
     }
 
     public static void main(String[] args) {
