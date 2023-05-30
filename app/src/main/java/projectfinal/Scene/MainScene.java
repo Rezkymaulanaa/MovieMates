@@ -25,7 +25,7 @@ public class MainScene {
 
         Button start = new Button("Start");
         start.setOnAction(action -> {
-            HomeScene homeScene = new HomeScene();
+            HomeScene homeScene = new HomeScene(stage);
             homeScene.show();
         });
 
