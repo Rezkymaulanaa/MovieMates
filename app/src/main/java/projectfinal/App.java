@@ -25,7 +25,6 @@ public class App extends Application {
     }
 
     private void Login() {
-        
         Label title = new Label("Hello MovieMates");
         Label name = new Label("Set your name");
 
@@ -39,20 +38,23 @@ public class App extends Application {
         apptitle.getChildren().add(title);
         apptitle.setAlignment(Pos.TOP_CENTER);
 
+        VBox content = new VBox(name, inputName, start);
+        content.setAlignment(Pos.CENTER);
+        content.setSpacing(20);
+
         VBox root = new VBox();
-        root.getChildren().addAll( apptitle , name , inputName , start);
+        root.getChildren().addAll(apptitle, content);
         root.setAlignment(Pos.CENTER);
         root.setSpacing(20);
-        VBox.setMargin(root, new Insets(50, 0, 0, 0));
+        VBox.setMargin(content, new Insets(150, 0, 180, 0));
 
-        Scene scene = new Scene(root , 450 , 500);
+        Scene scene = new Scene(root, 450, 500);
         stage.setScene(scene);
-        
     }
 
     private void HomePage() {
 
-        Scene scene = new Scene(new VBox() , 450 , 500);
+        Scene scene = new Scene(new VBox(), 450, 500);
         stage.setScene(scene);
     }
 
