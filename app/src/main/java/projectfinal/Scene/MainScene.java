@@ -25,9 +25,11 @@ public class MainScene {
 
         Button start = new Button("Start");
         start.setOnAction(action -> {
-            HomeScene homeScene = new HomeScene(stage);
+            String nameValue = inputName.getText();
+            HomeScene homeScene = new HomeScene(stage, nameValue);
             homeScene.show();
         });
+
 
         VBox apptitle = new VBox();
         apptitle.getChildren().add(title);
