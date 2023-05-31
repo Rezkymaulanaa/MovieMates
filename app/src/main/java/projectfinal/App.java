@@ -13,6 +13,8 @@ public class App extends Application {
         Stage stage;
         stage = PrimaryStage;
         stage.setTitle("MovieMates");
+        stage.setResizable(false);
+
 
         MainScene mainsScene = new MainScene(stage);
         mainsScene.show();
