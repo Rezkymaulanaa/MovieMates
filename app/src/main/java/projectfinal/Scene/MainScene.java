@@ -25,8 +25,7 @@ public class MainScene {
 
         Button start = new Button("Start");
         start.setOnAction(action -> {
-            String nameValue = inputName.getText();
-            HomeScene homeScene = new HomeScene(stage, nameValue);
+            HomeScene homeScene = new HomeScene(stage);
             homeScene.show();
         });
 
