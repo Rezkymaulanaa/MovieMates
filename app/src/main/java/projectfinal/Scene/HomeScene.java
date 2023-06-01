@@ -40,7 +40,7 @@ public class HomeScene {
         trending.setOnAction(e -> System.out.println("Genre button clicked"));
 
         HBox navbar = new HBox();
-        navbar.setSpacing(20);
+        navbar.setSpacing(30);
         navbar.setPadding(new Insets(20));
         navbar.getChildren().addAll(labelapp, home, trending);
         navbar.setAlignment(Pos.TOP_LEFT);

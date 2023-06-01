@@ -26,7 +26,7 @@ public class LimaCm {
         Label labeljudul = new Label("C I N E ");
         labeljudul.setStyle("-fx-text-fill: #BD2424; -fx-font-size: 20px; -fx-font-family: GOTHAM; -fx-font-weight: bold;");
         Label labeljudul2 = new Label("M A T C H");
-        labeljudul2.setStyle("-fx-text-fill: white; -fx-font-size: 20px; -fx-font-family: GOTHAM; -fx-font-weight: bold;");
+        labeljudul2.setStyle("-fx-text-fill: #D4D4D4; -fx-font-size: 20px; -fx-font-family: GOTHAM; -fx-font-weight: bold;");
 
         HBox labelapp = new HBox();
         labelapp.setSpacing(0);
@@ -52,7 +52,7 @@ public class LimaCm {
         // Sinopsis film
         String movieTitle = "5 CM";
         String movieDetail = "2012 - 2h 5m - Indonesian | 13+";
-        String movieSynopsis = "Film dibuka dengan perkenalan para tokoh utama yang narasinya diceritakan oleh Zafran (Herjunot Ali), seorang pemuda super puitis tapi karirnya amblas tak karuan membuat Ibunya hipertensi. Sedangkan tokoh utama lainnya adalah Genta (Fedi Nuril), Arial (Denny Sumargo), Riani (Raline Shah) dan Ian (Igor Saykoji). Mereka berlima sudah menjadi sahabat selama 10 tahun dan tidak pernah melewatkan 1 kali weekend pun untuk tidak bertemu. Mereka selalu menghabiskan akhir pekan mereka bersama dan basecamp mereka adalah rumah mewah milik Arial yang selalu menyediakan apapun yang mereka butuhkan, makanan, minuman sampai tempat nongkrong.";
+        String movieSynopsis = "Film dibuka dengan perkenalan para tokoh utama yang narasinya diceritakan oleh Zafran (Herjunot Ali), seorang pemuda super puitis tapi karirnya amblas tak karuan membuat Ibunya hipertensi. Sedangkan tokoh utama lainnya adalah Genta (Fedi Nuril), Arial (Denny Sumargo), Riani (Raline Shah) dan Ian (Igor Saykoji). Mereka berlima sudah menjadi sahabat selama 10 tahun dan tidak pernah melewatkan 1 kali weekend pun untuk tidak bertemu. Mereka selalu menghabiskan akhir pekan mereka bersama dan basecamp mereka adalah rumah mewah milik Arial yang selalu menyediakan apapun yang mereka butuhkan.";
         String movieGenre = "Drama | Romance";
 
         // Membuat komponen Label untuk judul film

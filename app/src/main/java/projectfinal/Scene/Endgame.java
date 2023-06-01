@@ -25,7 +25,7 @@ public class Endgame {
         Label labeljudul = new Label("C I N E ");
         labeljudul.setStyle("-fx-text-fill: #BD2424; -fx-font-size: 20px; -fx-font-family: GOTHAM; -fx-font-weight: bold;");
         Label labeljudul2 = new Label("M A T C H");
-        labeljudul2.setStyle("-fx-text-fill: white; -fx-font-size: 20px; -fx-font-family: GOTHAM; -fx-font-weight: bold;");
+        labeljudul2.setStyle("-fx-text-fill: #D4D4D4; -fx-font-size: 20px; -fx-font-family: GOTHAM; -fx-font-weight: bold;");
 
         HBox labelapp = new HBox();
         labelapp.setSpacing(0);
