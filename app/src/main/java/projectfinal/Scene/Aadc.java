@@ -13,10 +13,10 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class Endgame {
+public class Aadc {
     private Stage stage;
 
-    public Endgame(Stage stage){
+    public Aadc(Stage stage){
         this.stage = stage;
     }
 
@@ -49,10 +49,10 @@ public class Endgame {
 
 
         // Sinopsis film
-        String movieTitle = "The Avenger: Endgame";
-        String movieDetail = "2019 - 3h 1m | 13+";
-        String movieSynopsis = "Adrift in space with no food or water, Tony Stark sends a message to Pepper\nPotts as his oxygen supply starts to dwindle. Meanwhile, the remaining\nAvengers -- Thor, Black Widow, Captain America and Bruce Banner\n-- must figure out a way to bring back their vanquished allies for an epic\nshowdown with Thanos -- the evil demigod who decimatedthe planet and the universe.                                                                                                                                                         ";
-        String movieGenre = "SuperHero | Action | Dark Humour | Fantasy | Alien";
+        String movieTitle = "Ada Apa Dengan Cinta 2";
+        String movieDetail = "2016 - 2h 3m | 13+";
+        String movieSynopsis = "Cerita dimulai dengan latar waktu sekarang, yang berarti 14 tahun setelah kisah romansa Cinta (Dian Sastrowardoyo) dan Rangga (Nicholas Saputra) semasa SMA. Sayangnya, pada saat itu Cinta dan Rangga sudah tidak bersama, hubungan LDR mereka selama 9 tahun kandas karena Rangga meminta berpisah. Cinta sekarang menjadi pemilik sebuah Kafe Seni Pop Mini di Jakarta. Sedangkan Rangga masih tinggal di New York, ia dan temannya membuka kedai kopi di sana. Kita mendapatkan update kehidupan geng SMA Cinta.";
+        String movieGenre = "Drama | Romance";
 
         // Membuat komponen Label untuk judul film
         Label titleLabel = new Label(movieTitle);
@@ -78,13 +78,13 @@ public class Endgame {
         root.getChildren().addAll(titleLabel, detaiLabel, synopsisLabel, genreLabel);
 
         // POSTER 
-        Image image2 = new Image("D:/IMG Poster Film/Poster Endgame.jpg");
+        Image image2 = new Image("D:/IMG Poster Film/Poster AADC.jpg");
         ImageView imageView2 = new ImageView(image2);
         imageView2.setTranslateX(-55);
         imageView2.setTranslateY(20);
         
-        imageView2.setFitHeight(225);
-        imageView2.setFitWidth(175);
+        imageView2.setFitHeight(194);
+        imageView2.setFitWidth(306);
 
         // Menggabungkan Root dan Poster
         HBox gabungan = new HBox();
@@ -101,7 +101,7 @@ public class Endgame {
             homeScene.show();
         });
         VBox vBox = new VBox();
-        vBox.setPadding(new Insets(80, 0, 0 , 30));
+        vBox.setPadding(new Insets(100, 0, 0 , 30));
         vBox.getChildren().add(buttonback);
 
         // Button Tonton
@@ -110,7 +110,7 @@ public class Endgame {
         buttontonton.setMaxWidth(120);
         buttontonton.setOnAction(e -> {
             try {
-                String url = "https://youtu.be/TcMBFSGVi1c";
+                String url = "https://youtu.be/3c_McS4_2A8";
 
                 Desktop.getDesktop().browse(new URI(url));
             } catch (Exception ex) {
@@ -118,7 +118,7 @@ public class Endgame {
             }
         });
         VBox vBox2 = new VBox();
-        vBox2.setPadding(new Insets(50, 0, 0 , 720));
+        vBox2.setPadding(new Insets(0, 0, 0 , 650));
         vBox2.getChildren().add(buttontonton);
   
         // Layout Semua Item
@@ -132,4 +132,3 @@ public class Endgame {
         stage.show();
     }
 }
-

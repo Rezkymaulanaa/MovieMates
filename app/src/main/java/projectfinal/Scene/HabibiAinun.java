@@ -13,10 +13,10 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class Endgame {
+public class HabibiAinun {
     private Stage stage;
 
-    public Endgame(Stage stage){
+    public HabibiAinun(Stage stage){
         this.stage = stage;
     }
 
@@ -49,10 +49,10 @@ public class Endgame {
 
 
         // Sinopsis film
-        String movieTitle = "The Avenger: Endgame";
-        String movieDetail = "2019 - 3h 1m | 13+";
-        String movieSynopsis = "Adrift in space with no food or water, Tony Stark sends a message to Pepper\nPotts as his oxygen supply starts to dwindle. Meanwhile, the remaining\nAvengers -- Thor, Black Widow, Captain America and Bruce Banner\n-- must figure out a way to bring back their vanquished allies for an epic\nshowdown with Thanos -- the evil demigod who decimatedthe planet and the universe.                                                                                                                                                         ";
-        String movieGenre = "SuperHero | Action | Dark Humour | Fantasy | Alien";
+        String movieTitle = "Habibie & Ainun 3";
+        String movieDetail = "2019 - 2h - Indonesian | 13+";
+        String movieSynopsis = "Film Habibie & Ainun 3 mengambil alur maju mundur dari masa sekarang dan masa sekitar tahun 1950-an. Film dibuka dengan adegan saat BJ Habibie berziarah ke makan Hasri Ainun tepat setahun setelah kepergiannya. Habibie dan keluarga besarnya kemudian mengadakan makan malam bersama di rumah. Saat acara  makan, sang cucu memintanya untuk bercerita tentang eyang putrinya. Adegan kemudian beralih ke kilas balik saat Habibie dan Ainun masih berada di SMA yang sama. Habibie dan Ainun tampak saling mengagumi, namun mereka kemudian meneruskan mimpi mereka masing-masing.";
+        String movieGenre = "Biography | School | Drama | Romance | Youth";
 
         // Membuat komponen Label untuk judul film
         Label titleLabel = new Label(movieTitle);
@@ -78,13 +78,13 @@ public class Endgame {
         root.getChildren().addAll(titleLabel, detaiLabel, synopsisLabel, genreLabel);
 
         // POSTER 
-        Image image2 = new Image("D:/IMG Poster Film/Poster Endgame.jpg");
+        Image image2 = new Image("D:/IMG Poster Film/Poster Habibie Ainun 3.jpg");
         ImageView imageView2 = new ImageView(image2);
         imageView2.setTranslateX(-55);
         imageView2.setTranslateY(20);
         
-        imageView2.setFitHeight(225);
-        imageView2.setFitWidth(175);
+        imageView2.setFitHeight(194);
+        imageView2.setFitWidth(306);
 
         // Menggabungkan Root dan Poster
         HBox gabungan = new HBox();
@@ -101,7 +101,7 @@ public class Endgame {
             homeScene.show();
         });
         VBox vBox = new VBox();
-        vBox.setPadding(new Insets(80, 0, 0 , 30));
+        vBox.setPadding(new Insets(100, 0, 0 , 30));
         vBox.getChildren().add(buttonback);
 
         // Button Tonton
@@ -110,7 +110,7 @@ public class Endgame {
         buttontonton.setMaxWidth(120);
         buttontonton.setOnAction(e -> {
             try {
-                String url = "https://youtu.be/TcMBFSGVi1c";
+                String url = "https://youtu.be/CIP0esJ6MMs";
 
                 Desktop.getDesktop().browse(new URI(url));
             } catch (Exception ex) {
@@ -118,7 +118,7 @@ public class Endgame {
             }
         });
         VBox vBox2 = new VBox();
-        vBox2.setPadding(new Insets(50, 0, 0 , 720));
+        vBox2.setPadding(new Insets(0, 0, 0 , 650));
         vBox2.getChildren().add(buttontonton);
   
         // Layout Semua Item
@@ -132,4 +132,3 @@ public class Endgame {
         stage.show();
     }
 }
-

@@ -1,5 +1,7 @@
 package projectfinal.Scene;
 
+import java.net.URI;
+import java.awt.Desktop;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -7,7 +9,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -21,9 +22,9 @@ public class ToyStory {
 
     public void show(){
         // LAYOUT NAVBAR ATAS
-        Label labeljudul = new Label("CINE");
+        Label labeljudul = new Label("C I N E ");
         labeljudul.setStyle("-fx-text-fill: #BD2424; -fx-font-size: 20px; -fx-font-family: GOTHAM; -fx-font-weight: bold;");
-        Label labeljudul2 = new Label("MATCH");
+        Label labeljudul2 = new Label("M A T C H");
         labeljudul2.setStyle("-fx-text-fill: white; -fx-font-size: 20px; -fx-font-family: GOTHAM; -fx-font-weight: bold;");
 
         HBox labelapp = new HBox();
@@ -39,21 +40,27 @@ public class ToyStory {
         trending.setOnAction(e -> System.out.println("Genre button clicked"));
 
         HBox navbar = new HBox();
-        navbar.setSpacing(20);
+        navbar.setSpacing(30);
         navbar.setPadding(new Insets(20));
         navbar.getChildren().addAll(labelapp, home, trending);
         navbar.setAlignment(Pos.TOP_LEFT);
         navbar.setStyle("-fx-background-color: black");
-        navbar.setPrefWidth(960);
+        navbar.setPrefWidth(900);
+
 
         // Sinopsis film
         String movieTitle = "Toy Story 4";
-        String movieSynopsis = "Woody, Buzz Lightyear and the rest of the gang embark on a road trip with Bonnie and a new toy named Forky. The adventurous journey turns into an unexpected reunion as Woody's slight detour leads him to his long-lost friend Bo Peep. As Woody and Bo discuss the old days, they soon start to realize that they're worlds apart when it comes to what they want from life as a toy.                                                                                                                                                   ";
+        String movieDetail = "2019 - 1h 40m | G";
+        String movieSynopsis = "Woody, Buzz Lightyear and the rest of the gang embark on a road trip with\nBonnie and a new toy named Forky. The adventurous journey turns\ninto an unexpected reunion as Woody's slight detour leads him to hislong-lost\nfriend Bo Peep. As Woody and Bo discuss the old days, they soon start to\nrealize that they're worlds apart when it comes to what they want from life as a toy.                                                                                                                                                   ";
         String movieGenre = "Kids | Animation | Light-hearted | Family-Friendly | Reunion";
 
         // Membuat komponen Label untuk judul film
         Label titleLabel = new Label(movieTitle);
         titleLabel.setStyle("-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #D4D4D4");
+
+        // Membuat komponen Label untuk detail film
+        Label detaiLabel = new Label(movieDetail);
+        detaiLabel.setStyle("-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #D4D4D4");
         
         // Membuat komponen Label untuk sinopsis film
         Label synopsisLabel = new Label(movieSynopsis);
@@ -67,39 +74,62 @@ public class ToyStory {
         
         // Membuat layout VBox sebagai root
         VBox root = new VBox(10);
-        root.setMaxWidth(400);
-        root.setPadding(new Insets(20));
-        root.getChildren().addAll(titleLabel, synopsisLabel, genreLabel);
+        root.setPadding(new Insets(0, 0, 0, 40) );
+        root.getChildren().addAll(titleLabel, detaiLabel, synopsisLabel, genreLabel);
 
         // POSTER 
-        Image image2 = new Image("D:/IMG Poster FILM/Poster ToyStory4.jpg");
+        Image image2 = new Image("D:/IMG Poster Film/Poster ToyStory4.jpg");
         ImageView imageView2 = new ImageView(image2);
-        imageView2.setTranslateX(-175);
-        imageView2.setTranslateY(25);
+        imageView2.setTranslateX(-55);
+        imageView2.setTranslateY(20);
         
         imageView2.setFitHeight(225);
         imageView2.setFitWidth(175);
 
+        // Menggabungkan Root dan Poster
+        HBox gabungan = new HBox();
+        gabungan.setSpacing(180);
+        gabungan.setPadding(new Insets(30, 40, 0, 0));
+        gabungan.getChildren().addAll(root,imageView2);
 
+        // Button Kembali 
         Button buttonback = new Button("<-- Back");
+        buttonback.setMaxHeight(50);
+        buttonback.setMaxWidth(120);
         buttonback.setOnAction(V -> {
             HomeScene homeScene = new HomeScene(stage);
             homeScene.show();
         });
+        VBox vBox = new VBox();
+        vBox.setPadding(new Insets(80, 0, 0 , 30));
+        vBox.getChildren().add(buttonback);
 
+        // Button Tonton
+        Button buttontonton = new Button("Watch Trailer");
+        buttontonton.setMaxHeight(50);
+        buttontonton.setMaxWidth(120);
+        buttontonton.setOnAction(e -> {
+            try {
+                String url = "https://youtu.be/wmiIUN-7qhE";
 
+                Desktop.getDesktop().browse(new URI(url));
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        });
+        VBox vBox2 = new VBox();
+        vBox2.setPadding(new Insets(50, 0, 0 , 720));
+        vBox2.getChildren().add(buttontonton);
   
-        GridPane gridpane = new GridPane();
-        gridpane.setHgap(3);
-        gridpane.add(navbar,1,0);
-        gridpane.add(root,1,1);
-        gridpane.add(imageView2,2,1);
-        gridpane.add(buttonback,1,9);
-        gridpane.setStyle("-fx-background-color: #101010");
+        // Layout Semua Item
+        VBox layout = new VBox();
+        layout.setStyle("-fx-background-color: #101010");
+        layout.getChildren().addAll(navbar,gabungan,vBox2,vBox);
 
-        Scene scene = new Scene(gridpane,960,540);
+        Scene scene = new Scene(layout,960,540);
         stage.setScene(scene);
-        stage.setTitle("The Avenger: Endgame");
+        stage.setTitle("CINEMATCH");
         stage.show();
     }
 }
+

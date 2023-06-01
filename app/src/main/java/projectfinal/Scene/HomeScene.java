@@ -22,10 +22,10 @@ public class HomeScene {
     public void show() {
         
         // LAYOUT DI NAVBAR 
-        Label labeljudul = new Label("CINE");
+        Label labeljudul = new Label("C I N E ");
         labeljudul.setStyle("-fx-text-fill: #BD2424; -fx-font-size: 20px; -fx-font-family: GOTHAM; -fx-font-weight: bold;");
-        Label labeljudul2 = new Label("MATCH");
-        labeljudul2.setStyle("-fx-text-fill: white; -fx-font-size: 20px; -fx-font-family: GOTHAM; -fx-font-weight: bold;");
+        Label labeljudul2 = new Label("M A T C H");
+        labeljudul2.setStyle("-fx-text-fill: #D4D4D4; -fx-font-size: 20px; -fx-font-family: GOTHAM; -fx-font-weight: bold;");
 
         HBox labelapp = new HBox();
         labelapp.setSpacing(0);
@@ -33,10 +33,10 @@ public class HomeScene {
         labelapp.setAlignment(Pos.TOP_LEFT);
 
         Button home = new Button("Home");
-        home.setStyle("-fx-background-color: #101010; -fx-text-fill: white;");
+        home.setStyle("-fx-background-color: #101010; -fx-text-fill: #D4D4D4");
         home.setOnAction(e -> System.out.println("Home button clicked"));
         Button trending = new Button("Trending");
-        trending.setStyle("-fx-background-color: #101010; -fx-text-fill: white;");
+        trending.setStyle("-fx-background-color: #101010; -fx-text-fill: #D4D4D4");
         trending.setOnAction(e -> System.out.println("Genre button clicked"));
 
         HBox navbar = new HBox();
@@ -50,7 +50,7 @@ public class HomeScene {
 
         // Kategori 1
         Label label1 = new Label("Box Office HITS");
-        label1.setStyle("-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: Bold");
+        label1.setStyle("-fx-text-fill: #D4D4D4; -fx-font-size: 20px; -fx-font-weight: Bold");
         GridPane kategori1 = new GridPane();
         kategori1.add(label1,0,1);
         kategori1.setAlignment(Pos.TOP_LEFT);
@@ -179,8 +179,8 @@ public class HomeScene {
 
 
         // Kategori 2
-        Label label2 = new Label("    Indonesian Hits");
-        label2.setStyle("-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: Bold");
+        Label label2 = new Label("Indonesian HITS");
+        label2.setStyle("-fx-text-fill: #D4D4D4; -fx-font-size: 20px; -fx-font-weight: Bold");
         GridPane kategori2 = new GridPane();
         kategori2.add(label2,0,1);
         kategori2.setAlignment(Pos.TOP_LEFT);
@@ -195,119 +195,97 @@ public class HomeScene {
 
     //SET ON ACTION KATEGORI 2
         // Poster 1
-        
-        Image img1 = new Image("D:/IMG Poster FILM/Poster GOTG.jpg");
+        Image img1 = new Image("D:/IMG Poster FILM/Poster Ada Apa Dengan Cinta.jpg");
         ImageView imgView1 = new ImageView(img1);
         imgView1.setFitHeight(175);
-        imgView1.setFitWidth(125);
+        imgView1.setFitWidth(155);
 
         Button tombolPoster1 = new Button();
         tombolPoster1.setGraphic(imgView1);
-        tombolPoster1.setMaxHeight(200);
-        tombolPoster1.setMaxWidth(200);
+        tombolPoster1.setMaxHeight(125);
+        tombolPoster1.setMaxWidth(215);
         tombolPoster1.setStyle("-fx-background-color: #000000;");
         tombolPoster1.setOnAction(V -> {
-            GOTG gotg = new GOTG(stage);
-            gotg.show();
+            Aadc aadc = new Aadc(stage);
+            aadc.show();
         });
-        poster.add(tombolPoster1, 0, 0);
 
         // Poster 2
-        Image img2 = new Image("D:/IMG Poster FILM/Poster Endgame.jpg");
+        Image img2 = new Image("D:/IMG Poster FILM/Poster Habibie Ainun 3.jpg");
         ImageView imgView2 = new ImageView(img2);
         imgView2.setFitHeight(175);
-        imgView2.setFitWidth(125);
+        imgView2.setFitWidth(155);
 
         Button tombolPoster2 = new Button();
         tombolPoster2.setGraphic(imgView2);
-        tombolPoster2.setMaxHeight(200);
-        tombolPoster2.setMaxWidth(200);
+        tombolPoster2.setMaxHeight(175);
+        tombolPoster2.setMaxWidth(215);
         tombolPoster2.setStyle("-fx-background-color: #000000;");
         tombolPoster2.setOnAction(V -> {
-            Endgame endgame = new Endgame(stage);
-            endgame.show();
+            HabibiAinun habibiAinun = new HabibiAinun(stage);
+            habibiAinun.show();
         });
-        poster.add(tombolPoster2, 1, 0);
 
         // Poster 3
-        Image img3 = new Image("D:/IMG Poster FILM/Poster Titanic.jpg");
+        Image img3 = new Image("D:/IMG Poster FILM/Poster Kukira Kau Rumah.jpg");
         ImageView imgView3 = new ImageView(img3);
         imgView3.setFitHeight(175);
-        imgView3.setFitWidth(125);
+        imgView3.setFitWidth(155);
 
         Button tombolPoster3 = new Button();
         tombolPoster3.setGraphic(imgView3);
-        tombolPoster3.setMaxHeight(200);
-        tombolPoster3.setMaxWidth(200);
+        tombolPoster3.setMaxHeight(125);
+        tombolPoster3.setMaxWidth(215);
         tombolPoster3.setStyle("-fx-background-color: #000000;");
         tombolPoster3.setOnAction(V -> {
-            Titanic titanic = new Titanic(stage);
-            titanic.show();
+            KukiraKauRumah kukirakaurumah = new KukiraKauRumah(stage);
+            kukirakaurumah.show();
         });
-        poster.add(tombolPoster3, 1, 0);
 
         // Poster 4
-        Image img4 = new Image("D:/IMG Poster FILM/Poster The Walking Dead.jpg");
+        Image img4 = new Image("D:/IMG Poster FILM/Poster 5Cm.jpg");
         ImageView imgView4 = new ImageView(img4);
         imgView4.setFitHeight(175);
-        imgView4.setFitWidth(125);
+        imgView4.setFitWidth(155);
 
         Button tombolPoster4 = new Button();
         tombolPoster4.setGraphic(imgView4);
-        tombolPoster4.setMaxHeight(200);
-        tombolPoster4.setMaxWidth(200);
+        tombolPoster4.setMaxHeight(125);
+        tombolPoster4.setMaxWidth(215);
         tombolPoster4.setStyle("-fx-background-color: #000000;");
         tombolPoster4.setOnAction(V -> {
-            TWD twd = new TWD(stage);
-            twd.show();
+            LimaCm limaCm = new LimaCm(stage);
+            limaCm.show();
         });
-        poster.add(tombolPoster4, 1, 0);
 
         // Poster 5
-        Image img5 = new Image("D:/IMG Poster FILM/Poster ToyStory4.jpg");
+        Image img5 = new Image("D:/IMG Poster FILM/Poster Pengabdi Setan.jpg");
         ImageView imgView5 = new ImageView(img5);
         imgView5.setFitHeight(175);
-        imgView5.setFitWidth(125);
+        imgView5.setFitWidth(155);
 
         Button tombolPoster5 = new Button();
         tombolPoster5.setGraphic(imgView5);
-        tombolPoster5.setMaxHeight(200);
-        tombolPoster5.setMaxWidth(200);
+        tombolPoster5.setMaxHeight(125);
+        tombolPoster5.setMaxWidth(215);
         tombolPoster5.setStyle("-fx-background-color: #000000;");
         tombolPoster5.setOnAction(V -> {
-            ToyStory toyStory = new ToyStory(stage);
-            toyStory.show();
+            PengabdiSetan pengabdiSetan = new PengabdiSetan(stage);
+            pengabdiSetan.show();
         });
-        poster.add(tombolPoster5, 1, 0);
 
-        // Poster 6
-        Image img6 = new Image("D:/IMG Poster FILM/Poster Avatar.jpg");
-        ImageView imgView6 = new ImageView(img6);
-        imgView6.setFitHeight(175);
-        imgView6.setFitWidth(125);
 
-        Button tombolPoster6 = new Button();
-        tombolPoster6.setGraphic(imgView6);
-        tombolPoster6.setMaxHeight(200);
-        tombolPoster6.setMaxWidth(200);
-        tombolPoster6.setStyle("-fx-background-color: #000000;");
-        tombolPoster6.setOnAction(V -> {
-            Avatar avatar = new Avatar(stage);
-            avatar.show();
-        });
-        poster.add(tombolPoster6, 1, 0);
-
-        // TAMPILAN LAYOUT KATEGORI 1
+        // TAMPILAN LAYOUT KATEGORI 2
         HBox hBox3 = new HBox();
         hBox3.setSpacing(15);
         hBox3.setPadding(new Insets(20));
-        hBox3.getChildren().addAll(tombolPoster1, tombolPoster2, tombolPoster3, tombolPoster4, tombolPoster5, tombolPoster6);
+        hBox3.getChildren().addAll(tombolPoster1, tombolPoster2, tombolPoster3, tombolPoster4, tombolPoster5);
 
 
         // TAMPILAN SEMUA LAYOUT
         VBox layout = new VBox();
         layout.setStyle("-fx-background-color: #101010");
-        layout.getChildren().addAll(navbar, kategori1, hBox2, label2, hBox3);
+        layout.getChildren().addAll(navbar, kategori1, hBox2, kategori2, hBox3);
         
 
         Scene scene = new Scene(layout , 960, 540);

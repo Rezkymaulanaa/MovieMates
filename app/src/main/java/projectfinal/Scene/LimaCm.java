@@ -1,5 +1,6 @@
 package projectfinal.Scene;
 
+
 import java.net.URI;
 import java.awt.Desktop;
 import javafx.geometry.Insets;
@@ -13,10 +14,10 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class Endgame {
+public class LimaCm {
     private Stage stage;
 
-    public Endgame(Stage stage){
+    public LimaCm(Stage stage){
         this.stage = stage;
     }
 
@@ -49,10 +50,10 @@ public class Endgame {
 
 
         // Sinopsis film
-        String movieTitle = "The Avenger: Endgame";
-        String movieDetail = "2019 - 3h 1m | 13+";
-        String movieSynopsis = "Adrift in space with no food or water, Tony Stark sends a message to Pepper\nPotts as his oxygen supply starts to dwindle. Meanwhile, the remaining\nAvengers -- Thor, Black Widow, Captain America and Bruce Banner\n-- must figure out a way to bring back their vanquished allies for an epic\nshowdown with Thanos -- the evil demigod who decimatedthe planet and the universe.                                                                                                                                                         ";
-        String movieGenre = "SuperHero | Action | Dark Humour | Fantasy | Alien";
+        String movieTitle = "5 CM";
+        String movieDetail = "2012 - 2h 5m - Indonesian | 13+";
+        String movieSynopsis = "Film dibuka dengan perkenalan para tokoh utama yang narasinya diceritakan oleh Zafran (Herjunot Ali), seorang pemuda super puitis tapi karirnya amblas tak karuan membuat Ibunya hipertensi. Sedangkan tokoh utama lainnya adalah Genta (Fedi Nuril), Arial (Denny Sumargo), Riani (Raline Shah) dan Ian (Igor Saykoji). Mereka berlima sudah menjadi sahabat selama 10 tahun dan tidak pernah melewatkan 1 kali weekend pun untuk tidak bertemu. Mereka selalu menghabiskan akhir pekan mereka bersama dan basecamp mereka adalah rumah mewah milik Arial yang selalu menyediakan apapun yang mereka butuhkan, makanan, minuman sampai tempat nongkrong.";
+        String movieGenre = "Drama | Romance";
 
         // Membuat komponen Label untuk judul film
         Label titleLabel = new Label(movieTitle);
@@ -78,13 +79,13 @@ public class Endgame {
         root.getChildren().addAll(titleLabel, detaiLabel, synopsisLabel, genreLabel);
 
         // POSTER 
-        Image image2 = new Image("D:/IMG Poster Film/Poster Endgame.jpg");
+        Image image2 = new Image("D:/IMG Poster Film/Poster 5Cm.jpg");
         ImageView imageView2 = new ImageView(image2);
         imageView2.setTranslateX(-55);
         imageView2.setTranslateY(20);
-        
-        imageView2.setFitHeight(225);
-        imageView2.setFitWidth(175);
+
+        imageView2.setFitHeight(194);
+        imageView2.setFitWidth(306);
 
         // Menggabungkan Root dan Poster
         HBox gabungan = new HBox();
@@ -101,7 +102,7 @@ public class Endgame {
             homeScene.show();
         });
         VBox vBox = new VBox();
-        vBox.setPadding(new Insets(80, 0, 0 , 30));
+        vBox.setPadding(new Insets(100, 0, 0 , 30));
         vBox.getChildren().add(buttonback);
 
         // Button Tonton
@@ -110,7 +111,7 @@ public class Endgame {
         buttontonton.setMaxWidth(120);
         buttontonton.setOnAction(e -> {
             try {
-                String url = "https://youtu.be/TcMBFSGVi1c";
+                String url = "https://youtu.be/aL-wI0xZJ6M";
 
                 Desktop.getDesktop().browse(new URI(url));
             } catch (Exception ex) {
@@ -118,7 +119,7 @@ public class Endgame {
             }
         });
         VBox vBox2 = new VBox();
-        vBox2.setPadding(new Insets(50, 0, 0 , 720));
+        vBox2.setPadding(new Insets(0, 0, 0 , 650));
         vBox2.getChildren().add(buttontonton);
   
         // Layout Semua Item
@@ -132,4 +133,3 @@ public class Endgame {
         stage.show();
     }
 }
-
