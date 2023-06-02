@@ -1,7 +1,9 @@
 package projectfinal.Scene;
 
+
 import java.net.URI;
 import java.awt.Desktop;
+
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -14,10 +16,10 @@ import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
-public class TWD {
+public class Lionking {
     private Stage stage;
 
-    public TWD(Stage stage){
+    public Lionking(Stage stage){
         this.stage = stage;
     }
 
@@ -50,10 +52,10 @@ public class TWD {
 
 
         // Sinopsis film
-        String movieTitle = "The Walking Dead";
-        String movieDetail = "2022 - 11 Seasons | 21+";
-        String movieSynopsis = "The Walking Dead, based on the comic book series written by Robert Kirkman\nand published by Image Comics, tells the story of the months and years that\nfollow after a zombie apocalypse. It follows a group of survivors, led by police\nofficer Rick Grimes, who travel in search of a safe and secure home. The comic\ngoes on to explore the challenges of life in a world overrun by zombies who take\na toll on the survivors.                                                                                                          ";
-        String movieGenre = "Drama | Horror | Zombie Apocalypse | Thriller";  
+        String movieTitle = "The Lion King";
+        String movieDetail = "2019 - 1h 58m | PG";
+        String movieSynopsis = "Simba idolizes his father, King Mufasa, and takes to heart his own royal\ndestiny on the plains of Africa. But not everyone in the kingdom celebrates\nthe new cub's arrival. Scar, Mufasa's brother -- and former heir to the\nthrone -- has plans of his own. The battle for Pride Rock is soon ravaged\nwith betrayal, tragedy and drama, ultimately resulting in Simba's exile. Now,\nwith help from a curious pair of newfound friends, Simba must figure out how to\ngrow up and take back what is rightfully his.";
+        String movieGenre = "Adventure | Animation | Drama | Family | Musical";
 
         // Membuat komponen Label untuk judul film
         Label titleLabel = new Label(movieTitle);
@@ -79,9 +81,9 @@ public class TWD {
         root.getChildren().addAll(titleLabel, detaiLabel, synopsisLabel, genreLabel);
 
         // POSTER 
-        Image image2 = new Image("D:/IMG Poster Film/Poster The Walking Dead.jpg");
+        Image image2 = new Image("D:/IMG Poster FILM/Poster Lion King.jpg");
         ImageView imageView2 = new ImageView(image2);
-        imageView2.setTranslateX(-40);
+        imageView2.setTranslateX(0);
         imageView2.setTranslateY(30);
         
         imageView2.setFitHeight(275);
@@ -91,7 +93,7 @@ public class TWD {
         Rectangle rectangle = new Rectangle(200, 275);
         rectangle.setArcWidth(20);
         rectangle.setArcHeight(20);
-        // Mengatur efek melengkung pada ImageView
+            // Mengatur efek melengkung pada ImageView
         imageView2.setClip(rectangle);
 
         // Menggabungkan Root dan Poster
@@ -118,7 +120,7 @@ public class TWD {
         buttontonton.setMaxWidth(120);
         buttontonton.setOnAction(e -> {
             try {
-                String url = "https://youtu.be/sfAc2U20uyg";
+                String url = "https://youtu.be/7TavVZMewpY";
 
                 Desktop.getDesktop().browse(new URI(url));
             } catch (Exception ex) {
@@ -140,4 +142,3 @@ public class TWD {
         stage.show();
     }
 }
-

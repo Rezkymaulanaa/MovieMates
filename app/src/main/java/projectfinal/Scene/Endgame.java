@@ -11,6 +11,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 public class Endgame {
@@ -80,11 +81,18 @@ public class Endgame {
         // POSTER 
         Image image2 = new Image("D:/IMG Poster Film/Poster Endgame.jpg");
         ImageView imageView2 = new ImageView(image2);
-        imageView2.setTranslateX(-55);
-        imageView2.setTranslateY(20);
+        imageView2.setTranslateX(-75);
+        imageView2.setTranslateY(30);
         
-        imageView2.setFitHeight(225);
-        imageView2.setFitWidth(175);
+        imageView2.setFitHeight(275);
+        imageView2.setFitWidth(200);
+
+        // Membuat rectangle dengan efek melengkung
+        Rectangle rectangle = new Rectangle(200, 275);
+        rectangle.setArcWidth(20);
+        rectangle.setArcHeight(20);
+        // Mengatur efek melengkung pada ImageView
+        imageView2.setClip(rectangle);
 
         // Menggabungkan Root dan Poster
         HBox gabungan = new HBox();
@@ -101,7 +109,7 @@ public class Endgame {
             homeScene.show();
         });
         VBox vBox = new VBox();
-        vBox.setPadding(new Insets(80, 0, 0 , 30));
+        vBox.setPadding(new Insets(35, 0, 0 , 30));
         vBox.getChildren().add(buttonback);
 
         // Button Tonton
@@ -118,7 +126,7 @@ public class Endgame {
             }
         });
         VBox vBox2 = new VBox();
-        vBox2.setPadding(new Insets(50, 0, 0 , 720));
+        vBox2.setPadding(new Insets(50, 0, 0 , 685));
         vBox2.getChildren().add(buttontonton);
   
         // Layout Semua Item

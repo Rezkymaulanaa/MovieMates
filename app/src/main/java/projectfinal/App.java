@@ -12,7 +12,7 @@ public class App extends Application {
         stage = PrimaryStage;
         stage.setTitle("MovieMates");
         stage.setResizable(false);
-        Image icon = new Image("D:/logo.jpg");
+        Image icon = new Image("D:/IMG Poster FILM/logo.png");
         stage.getIcons().add(icon);
 
         MainScene mainsScene = new MainScene(stage);

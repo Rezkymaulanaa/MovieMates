@@ -11,6 +11,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 public class HabibiAinun {
@@ -86,6 +87,13 @@ public class HabibiAinun {
         imageView2.setFitHeight(194);
         imageView2.setFitWidth(306);
 
+        // Membuat rectangle dengan efek melengkung
+        Rectangle rectangle = new Rectangle(306, 194);
+        rectangle.setArcWidth(20);
+        rectangle.setArcHeight(20);
+        // Mengatur efek melengkung pada ImageView
+        imageView2.setClip(rectangle);
+
         // Menggabungkan Root dan Poster
         HBox gabungan = new HBox();
         gabungan.setSpacing(180);
@@ -101,7 +109,7 @@ public class HabibiAinun {
             homeScene.show();
         });
         VBox vBox = new VBox();
-        vBox.setPadding(new Insets(100, 0, 0 , 30));
+        vBox.setPadding(new Insets(105, 0, 0 , 30));
         vBox.getChildren().add(buttonback);
 
         // Button Tonton
