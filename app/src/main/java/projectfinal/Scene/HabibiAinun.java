@@ -79,7 +79,7 @@ public class HabibiAinun {
         root.getChildren().addAll(titleLabel, detaiLabel, synopsisLabel, genreLabel);
 
         // POSTER 
-        Image image2 = new Image("D:/IMG Poster Film/Poster Habibie Ainun 3.jpg");
+        Image image2 = new Image(getClass().getClassLoader().getResourceAsStream("images/Poster_Habibie_Ainun_3.jpg"));
         ImageView imageView2 = new ImageView(image2);
         imageView2.setTranslateX(-55);
         imageView2.setTranslateY(20);

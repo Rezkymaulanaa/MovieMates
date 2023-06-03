@@ -79,7 +79,7 @@ public class Avatar {
         root.getChildren().addAll(titleLabel, detaiLabel, synopsisLabel, genreLabel);
 
         // POSTER 
-        Image image2 = new Image("D:/IMG Poster Film/Poster Avatar.jpg");
+        Image image2 = new Image(getClass().getClassLoader().getResourceAsStream("images/Poster_Avatar.jpg"));
         ImageView imageView2 = new ImageView(image2);
         imageView2.setTranslateX(0);
         imageView2.setTranslateY(30);

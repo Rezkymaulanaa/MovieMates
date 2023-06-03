@@ -79,7 +79,7 @@ public class Titanic {
         root.getChildren().addAll(titleLabel, detaiLabel, synopsisLabel, genreLabel);
 
         // POSTER 
-        Image image2 = new Image("D:/IMG Poster Film/Poster Titanic.jpg");
+        Image image2 = new Image(getClass().getClassLoader().getResourceAsStream("images/Poster_Titanic.jpg"));
         ImageView imageView2 = new ImageView(image2);
         imageView2.setTranslateX(-25);
         imageView2.setTranslateY(30);

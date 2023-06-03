@@ -79,7 +79,7 @@ public class GOTG {
         root.getChildren().addAll(titleLabel, detaiLabel, synopsisLabel, genreLabel);
 
         // POSTER 
-        Image image2 = new Image("D:/IMG Poster Film/Poster GOTG.jpg");
+        Image image2 = new Image(getClass().getClassLoader().getResourceAsStream("images/Poster_GOTG.jpg"));
         ImageView imageView2 = new ImageView(image2);
         imageView2.setTranslateX(-75);
         imageView2.setTranslateY(30);

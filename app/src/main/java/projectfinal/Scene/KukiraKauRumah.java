@@ -79,7 +79,7 @@ public class KukiraKauRumah {
         root.getChildren().addAll(titleLabel, detaiLabel, synopsisLabel, genreLabel);
 
         // POSTER 
-        Image image2 = new Image("D:/IMG Poster Film/Poster Kukira Kau Rumah.jpg");
+        Image image2 = new Image(getClass().getClassLoader().getResourceAsStream("images/Poster_Kukira_kau_Rumah.jpg"));
         ImageView imageView2 = new ImageView(image2);
         imageView2.setTranslateX(-55);
         imageView2.setTranslateY(20);

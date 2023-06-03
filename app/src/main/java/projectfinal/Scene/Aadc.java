@@ -79,7 +79,7 @@ public class Aadc {
         root.getChildren().addAll(titleLabel, detaiLabel, synopsisLabel, genreLabel);
 
         // POSTER 
-        Image image2 = new Image("D:/IMG Poster Film/Poster Ada Apa Dengan Cinta.jpg");
+        Image image2 = new Image(getClass().getClassLoader().getResourceAsStream("images/Poster_Ada_Apa_Dengan_Cinta.jpg"));
         ImageView imageView2 = new ImageView(image2);
         imageView2.setTranslateX(-55);
         imageView2.setTranslateY(20);

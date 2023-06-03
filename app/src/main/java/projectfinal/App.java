@@ -7,13 +7,11 @@ import projectfinal.Scene.MainScene;
 
 public class App extends Application {
     @Override
-    public void start(Stage PrimaryStage) {
-        Stage stage;
-        stage = PrimaryStage;
+    public void start(Stage stage) {
         stage.setTitle("MovieMates");
         stage.setResizable(false);
-        Image icon = new Image("D:/IMG Poster FILM/logo.png");
-        stage.getIcons().add(icon);
+        Image imgIcon = new Image(getClass().getClassLoader().getResourceAsStream("images/logo.png"));
+        stage.getIcons().add(imgIcon);
 
         MainScene mainsScene = new MainScene(stage);
         mainsScene.show();

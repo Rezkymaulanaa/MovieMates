@@ -81,7 +81,7 @@ public class Lionking {
         root.getChildren().addAll(titleLabel, detaiLabel, synopsisLabel, genreLabel);
 
         // POSTER 
-        Image image2 = new Image("D:/IMG Poster FILM/Poster Lion King.jpg");
+        Image image2 = new Image(getClass().getClassLoader().getResourceAsStream("images/Poster_Lion_King.jpg"));
         ImageView imageView2 = new ImageView(image2);
         imageView2.setTranslateX(0);
         imageView2.setTranslateY(30);
