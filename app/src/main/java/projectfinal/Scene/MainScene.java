@@ -33,6 +33,8 @@ public class MainScene {
 
         Image backImage = new Image(getClass().getClassLoader().getResourceAsStream("images/Background_Mainscene.jpg"));
         ImageView iView = new ImageView(backImage);
+        iView.setPreserveRatio(true);
+        iView.setFitHeight(550);
         img.getChildren().add(iView);
 
         HBox apptitle = new HBox();
