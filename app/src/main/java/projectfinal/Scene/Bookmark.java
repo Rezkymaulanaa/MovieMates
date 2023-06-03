@@ -57,7 +57,6 @@ public class Bookmark {
         navbar.setPrefWidth(900);
 
 
-
         // Layout Semua Item
         VBox layout = new VBox();
         layout.setStyle("-fx-background-color: #101010");

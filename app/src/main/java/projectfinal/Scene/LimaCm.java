@@ -55,8 +55,8 @@ public class LimaCm {
         bookmarkLabel.setPadding(new Insets(5, 0, 0, 0));
         bookmarkLabel.setOnMouseClicked(event -> {
             bookmarkLabel.setStyle("-fx-background-color: #BD2424; -fx-padding: 10px;");
-            HomeScene homeScene = new HomeScene(stage);
-            homeScene.show();
+            Bookmark bookmark = new Bookmark(stage);
+            bookmark.show();
         });
         bookmarkLabel.setOnMouseEntered(event -> {
             bookmarkLabel.setStyle("-fx-text-fill: #BD2424; -fx-font-weight: bold; -fx-font-size: 14px");

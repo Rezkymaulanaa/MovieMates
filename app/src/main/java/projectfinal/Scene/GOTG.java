@@ -59,8 +59,8 @@ public class GOTG {
         bookmarkLabel.setPadding(new Insets(5, 0, 0, 0));
         bookmarkLabel.setOnMouseClicked(event -> {
             bookmarkLabel.setStyle("-fx-background-color: #BD2424; -fx-padding: 10px;");
-            HomeScene homeScene = new HomeScene(stage);
-            homeScene.show();
+            Bookmark bookmark = new Bookmark(stage);
+            bookmark.show();
         });
         bookmarkLabel.setOnMouseEntered(event -> {
             bookmarkLabel.setStyle("-fx-text-fill: #BD2424; -fx-font-weight: bold; -fx-font-size: 14px");
@@ -148,7 +148,7 @@ public class GOTG {
         vBox.getChildren().add(buttonback);
 
         // Button Tonton
-        Button buttontonton = new Button("Watch Trailer");
+        Button buttontonton = new Button("Watch");
         buttontonton.setStyle("-fx-background-color: #F8F8F8; -fx-font-weight: bold");
         buttontonton.setOnMouseEntered(event -> {
             buttontonton.setStyle("-fx-background-color: #DBD5D6; -fx-font-weight: bold");
@@ -160,7 +160,7 @@ public class GOTG {
         buttontonton.setMaxWidth(120);
         buttontonton.setOnAction(e -> {
             try {
-                String url = "https://youtu.be/d96cjJhvlMA";
+                String url = "https://77.105.142.75/movie/guardians-of-the-galaxy-2014/";
 
                 Desktop.getDesktop().browse(new URI(url));
             } catch (Exception ex) {
