@@ -107,6 +107,26 @@ public class HomeScene {
             GOTG gotg = new GOTG(stage);
             gotg.show();
         });
+        imageView1.setOnMouseEntered(enter -> {
+            imageView1.setFitHeight(300);
+            imageView1.setFitWidth(200);
+            Rectangle rectangle = new Rectangle(200, 300);
+            rectangle.setArcWidth(20);
+            rectangle.setArcHeight(20);
+                // Mengatur efek melengkung pada ImageView
+            imageView1.setClip(rectangle);
+        });
+        imageView1.setOnMouseExited(enter -> {
+            imageView1.setFitHeight(225);
+            imageView1.setFitWidth(150);
+                // Membuat rectangle dengan efek melengkung
+            Rectangle rectangle = new Rectangle(150, 225);
+            rectangle.setArcWidth(20);
+            rectangle.setArcHeight(20);
+                // Mengatur efek melengkung pada ImageView
+            imageView1.setClip(rectangle);
+        });
+
             // Membuat rectangle dengan efek melengkung
         Rectangle rectangle = new Rectangle(150, 225);
         rectangle.setArcWidth(20);
@@ -130,6 +150,26 @@ public class HomeScene {
             Endgame endgame = new Endgame(stage);
             endgame.show();
         });
+        imageView2.setOnMouseEntered(enter -> {
+            imageView2.setFitHeight(300);
+            imageView2.setFitWidth(200);
+            Rectangle rectangle2 = new Rectangle(200, 300);
+            rectangle2.setArcWidth(20);
+            rectangle2.setArcHeight(20);
+                // Mengatur efek melengkung pada ImageView
+            imageView2.setClip(rectangle2);
+        });
+        imageView2.setOnMouseExited(enter -> {
+            imageView2.setFitHeight(225);
+            imageView2.setFitWidth(150);
+                // Membuat rectangle dengan efek melengkung
+            Rectangle rectangle2 = new Rectangle(150, 225);
+            rectangle2.setArcWidth(20);
+            rectangle2.setArcHeight(20);
+                // Mengatur efek melengkung pada ImageView
+            imageView2.setClip(rectangle2);
+            
+        });
             // Membuat rectangle dengan efek melengkung
         Rectangle rectangle2 = new Rectangle(150, 225);
         rectangle2.setArcWidth(20);
@@ -152,6 +192,25 @@ public class HomeScene {
         imageView3.setOnMouseClicked(V -> {
             Titanic titanic = new Titanic(stage);
             titanic.show();
+        });
+        imageView3.setOnMouseEntered(enter -> {
+            imageView3.setFitHeight(300);
+            imageView3.setFitWidth(200);
+            Rectangle rectangle3 = new Rectangle(200, 300);
+            rectangle3.setArcWidth(20);
+            rectangle3.setArcHeight(20);
+                // Mengatur efek melengkung pada ImageView
+            imageView3.setClip(rectangle3);
+        });
+        imageView3.setOnMouseExited(enter -> {
+            imageView3.setFitHeight(225);
+            imageView3.setFitWidth(150);
+                // Membuat rectangle dengan efek melengkung
+            Rectangle rectangle3 = new Rectangle(150, 225);
+            rectangle3.setArcWidth(20);
+            rectangle3.setArcHeight(20);
+                // Mengatur efek melengkung pada ImageView
+            imageView3.setClip(rectangle3);
         });
             // Membuat rectangle dengan efek melengkung
         Rectangle rectangle3 = new Rectangle(150, 225);
@@ -177,6 +236,25 @@ public class HomeScene {
             TWD twd = new TWD(stage);
             twd.show();
         });
+        imageView4.setOnMouseEntered(enter -> {
+            imageView4.setFitHeight(300);
+            imageView4.setFitWidth(200);
+            Rectangle rectangle4 = new Rectangle(200, 300);
+            rectangle4.setArcWidth(20);
+            rectangle4.setArcHeight(20);
+                // Mengatur efek melengkung pada ImageView
+            imageView4.setClip(rectangle4);
+        });
+        imageView4.setOnMouseExited(enter -> {
+            imageView4.setFitHeight(225);
+            imageView4.setFitWidth(150);
+                // Membuat rectangle dengan efek melengkung
+            Rectangle rectangle4 = new Rectangle(150, 225);
+            rectangle4.setArcWidth(20);
+            rectangle4.setArcHeight(20);
+                // Mengatur efek melengkung pada ImageView
+            imageView4.setClip(rectangle4);
+        });
             // Membuat rectangle dengan efek melengkung
         Rectangle rectangle4 = new Rectangle(150, 225);
         rectangle4.setArcWidth(20);
@@ -199,6 +277,25 @@ public class HomeScene {
         imageView5.setOnMouseClicked(V -> {
             ToyStory toyStory = new ToyStory(stage);
             toyStory.show();
+        });
+        imageView5.setOnMouseEntered(enter -> {
+            imageView5.setFitHeight(300);
+            imageView5.setFitWidth(200);
+            Rectangle rectangle5 = new Rectangle(200, 300);
+            rectangle5.setArcWidth(20);
+            rectangle5.setArcHeight(20);
+                // Mengatur efek melengkung pada ImageView
+            imageView5.setClip(rectangle5);
+        });
+        imageView5.setOnMouseExited(enter -> {
+            imageView5.setFitHeight(225);
+            imageView5.setFitWidth(150);
+                // Membuat rectangle dengan efek melengkung
+            Rectangle rectangle5 = new Rectangle(150, 225);
+            rectangle5.setArcWidth(20);
+            rectangle5.setArcHeight(20);
+                // Mengatur efek melengkung pada ImageView
+            imageView5.setClip(rectangle5);
         });
             // Membuat rectangle dengan efek melengkung
         Rectangle rectangle5 = new Rectangle(150, 225);
@@ -223,6 +320,25 @@ public class HomeScene {
             Avatar avatar = new Avatar(stage);
             avatar.show();
         });
+        imageView6.setOnMouseEntered(enter -> {
+            imageView6.setFitHeight(300);
+            imageView6.setFitWidth(200);
+            Rectangle rectangle6 = new Rectangle(200, 300);
+            rectangle6.setArcWidth(20);
+            rectangle6.setArcHeight(20);
+                // Mengatur efek melengkung pada ImageView
+            imageView6.setClip(rectangle6);
+        });
+        imageView6.setOnMouseExited(enter -> {
+            imageView6.setFitHeight(225);
+            imageView6.setFitWidth(150);
+                // Membuat rectangle dengan efek melengkung
+            Rectangle rectangle6 = new Rectangle(150, 225);
+            rectangle6.setArcWidth(20);
+            rectangle6.setArcHeight(20);
+                // Mengatur efek melengkung pada ImageView
+            imageView6.setClip(rectangle6);
+        });
             // Membuat rectangle dengan efek melengkung
         Rectangle rectangle6 = new Rectangle(150, 225);
         rectangle6.setArcWidth(20);
@@ -244,6 +360,25 @@ public class HomeScene {
         imageView7.setOnMouseClicked(V -> {
             Lionking lionking = new Lionking(stage);
             lionking.show();
+        });
+        imageView7.setOnMouseEntered(enter -> {
+            imageView7.setFitHeight(300);
+            imageView7.setFitWidth(200);
+            Rectangle rectangle7 = new Rectangle(200, 300);
+            rectangle7.setArcWidth(20);
+            rectangle7.setArcHeight(20);
+                // Mengatur efek melengkung pada ImageView
+            imageView7.setClip(rectangle7);
+        });
+        imageView7.setOnMouseExited(enter -> {
+            imageView7.setFitHeight(225);
+            imageView7.setFitWidth(150);
+                // Membuat rectangle dengan efek melengkung
+            Rectangle rectangle7 = new Rectangle(150, 225);
+            rectangle7.setArcWidth(20);
+            rectangle7.setArcHeight(20);
+                // Mengatur efek melengkung pada ImageView
+            imageView7.setClip(rectangle7);
         });
             // Membuat rectangle dengan efek melengkung
         Rectangle rectangle7 = new Rectangle(150, 225);
@@ -293,6 +428,25 @@ public class HomeScene {
             Aadc aadc = new Aadc(stage);
             aadc.show();
         });
+        imgView1.setOnMouseEntered(enter -> {
+            imgView1.setFitHeight(175);
+            imgView1.setFitWidth(300);
+            Rectangle rect1 = new Rectangle(300, 175);
+            rect1.setArcWidth(20);
+            rect1.setArcHeight(20);
+                // Mengatur efek melengkung pada ImageView
+            imgView1.setClip(rect1);
+        });
+        imgView1.setOnMouseExited(enter -> {
+            imgView1.setFitHeight(150);
+            imgView1.setFitWidth(225);
+                // Membuat rectangle dengan efek melengkung
+            Rectangle rect1 = new Rectangle(225, 150);
+            rect1.setArcWidth(20);
+            rect1.setArcHeight(20);
+                // Mengatur efek melengkung pada ImageView
+            imgView1.setClip(rect1);
+        });
             // Membuat rectangle dengan efek melengkung
         Rectangle rect1 = new Rectangle(225, 150);
         rect1.setArcWidth(20);
@@ -315,6 +469,25 @@ public class HomeScene {
         imgView2.setOnMouseClicked(V -> {
             HabibiAinun habibiAinun = new HabibiAinun(stage);
             habibiAinun.show();
+        });
+        imgView2.setOnMouseEntered(enter -> {
+            imgView2.setFitHeight(175);
+            imgView2.setFitWidth(300);
+            Rectangle rect2 = new Rectangle(300, 175);
+            rect2.setArcWidth(20);
+            rect2.setArcHeight(20);
+                // Mengatur efek melengkung pada ImageView
+            imgView2.setClip(rect2);
+        });
+        imgView2.setOnMouseExited(enter -> {
+            imgView2.setFitHeight(150);
+            imgView2.setFitWidth(225);
+                // Membuat rectangle dengan efek melengkung
+            Rectangle rect2 = new Rectangle(225, 150);
+            rect2.setArcWidth(20);
+            rect2.setArcHeight(20);
+                // Mengatur efek melengkung pada ImageView
+            imgView2.setClip(rect2);
         });
             // Membuat rectangle dengan efek melengkung
         Rectangle rect2 = new Rectangle(225, 150);
@@ -339,6 +512,25 @@ public class HomeScene {
             KukiraKauRumah kukiraKauRumah = new KukiraKauRumah(stage);
             kukiraKauRumah.show();
         });
+        imgView3.setOnMouseEntered(enter -> {
+            imgView3.setFitHeight(175);
+            imgView3.setFitWidth(300);
+            Rectangle rect3 = new Rectangle(300, 175);
+            rect3.setArcWidth(20);
+            rect3.setArcHeight(20);
+                // Mengatur efek melengkung pada ImageView
+            imgView3.setClip(rect3);
+        });
+        imgView3.setOnMouseExited(enter -> {
+            imgView3.setFitHeight(150);
+            imgView3.setFitWidth(225);
+                // Membuat rectangle dengan efek melengkung
+            Rectangle rect3 = new Rectangle(225, 150);
+            rect3.setArcWidth(20);
+            rect3.setArcHeight(20);
+                // Mengatur efek melengkung pada ImageView
+            imgView3.setClip(rect3);
+        });
             // Membuat rectangle dengan efek melengkung
         Rectangle rect3 = new Rectangle(225, 150);
         rect3.setArcWidth(20);
@@ -362,6 +554,25 @@ public class HomeScene {
             LimaCm limaCm = new LimaCm(stage);
             limaCm.show();
         });
+        imgView4.setOnMouseEntered(enter -> {
+            imgView4.setFitHeight(175);
+            imgView4.setFitWidth(300);
+            Rectangle rect4 = new Rectangle(300, 175);
+            rect4.setArcWidth(20);
+            rect4.setArcHeight(20);
+                // Mengatur efek melengkung pada ImageView
+            imgView4.setClip(rect4);
+        });
+        imgView4.setOnMouseExited(enter -> {
+            imgView4.setFitHeight(150);
+            imgView4.setFitWidth(225);
+                // Membuat rectangle dengan efek melengkung
+            Rectangle rect4 = new Rectangle(225, 150);
+            rect4.setArcWidth(20);
+            rect4.setArcHeight(20);
+                // Mengatur efek melengkung pada ImageView
+            imgView4.setClip(rect4);
+        });
             // Membuat rectangle dengan efek melengkung
         Rectangle rect4 = new Rectangle(225, 150);
         rect4.setArcWidth(20);
@@ -384,6 +595,25 @@ public class HomeScene {
         imgView5.setOnMouseClicked(V -> {
             PengabdiSetan pengabdiSetan = new PengabdiSetan(stage);
             pengabdiSetan.show();
+        });
+        imgView5.setOnMouseEntered(enter -> {
+            imgView5.setFitHeight(175);
+            imgView5.setFitWidth(300);
+            Rectangle rect5 = new Rectangle(300, 175);
+            rect5.setArcWidth(20);
+            rect5.setArcHeight(20);
+                // Mengatur efek melengkung pada ImageView
+            imgView5.setClip(rect5);
+        });
+        imgView5.setOnMouseExited(enter -> {
+            imgView5.setFitHeight(150);
+            imgView5.setFitWidth(225);
+                // Membuat rectangle dengan efek melengkung
+            Rectangle rect5 = new Rectangle(225, 150);
+            rect5.setArcWidth(20);
+            rect5.setArcHeight(20);
+                // Mengatur efek melengkung pada ImageView
+            imgView5.setClip(rect5);
         });
             // Membuat rectangle dengan efek melengkung
         Rectangle rect5 = new Rectangle(225, 150);
