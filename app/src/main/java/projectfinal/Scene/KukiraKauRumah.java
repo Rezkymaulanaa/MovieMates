@@ -49,25 +49,25 @@ public class KukiraKauRumah {
         });
         
 
-        Label trendinglLabel = new Label("Trending");
-        trendinglLabel.setStyle("-fx-text-fill: #D4D4D4; -fx-font-weight: bold; -fx-font-size: 14px");
-        trendinglLabel.setPadding(new Insets(5, 0, 0, 0));
-        trendinglLabel.setOnMouseClicked(event -> {
-            trendinglLabel.setStyle("-fx-background-color: #BD2424; -fx-padding: 10px;");
+        Label bookmarklLabel = new Label("Bookmarks");
+        bookmarklLabel.setStyle("-fx-text-fill: #D4D4D4; -fx-font-weight: bold; -fx-font-size: 14px");
+        bookmarklLabel.setPadding(new Insets(5, 0, 0, 0));
+        bookmarklLabel.setOnMouseClicked(event -> {
+            bookmarklLabel.setStyle("-fx-background-color: #BD2424; -fx-padding: 10px;");
             HomeScene homeScene = new HomeScene(stage);
             homeScene.show();
         });
-        trendinglLabel.setOnMouseEntered(event -> {
-            trendinglLabel.setStyle("-fx-text-fill: #BD2424; -fx-font-weight: bold; -fx-font-size: 14px");
+        bookmarklLabel.setOnMouseEntered(event -> {
+            bookmarklLabel.setStyle("-fx-text-fill: #BD2424; -fx-font-weight: bold; -fx-font-size: 14px");
         });
-        trendinglLabel.setOnMouseExited(event -> {
-            trendinglLabel.setStyle("-fx-text-fill: #D4D4D4; -fx-font-weight: bold; -fx-font-size: 14px");
+        bookmarklLabel.setOnMouseExited(event -> {
+            bookmarklLabel.setStyle("-fx-text-fill: #D4D4D4; -fx-font-weight: bold; -fx-font-size: 14px");
         });
 
         HBox navbar = new HBox();
         navbar.setSpacing(40);
         navbar.setPadding(new Insets(20));
-        navbar.getChildren().addAll(labelapp, homeLabel, trendinglLabel);
+        navbar.getChildren().addAll(labelapp, homeLabel, bookmarklLabel);
         navbar.setAlignment(Pos.TOP_LEFT);
         navbar.setStyle("-fx-background-color: black");
         navbar.setPrefWidth(900);

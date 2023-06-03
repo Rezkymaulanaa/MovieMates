@@ -1,6 +1,5 @@
 package projectfinal.Scene;
 
-
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -40,10 +39,22 @@ public class HomeScene {
         home.setMaxWidth(200);
         home.setMaxHeight(50);
 
-        Button trending = new Button("Trending");
-        trending.setStyle("-fx-background-color: black; -fx-text-fill: #D4D4D4; -fx-font-weight: bold; -fx-font-size: 14px");
-        trending.setMaxWidth(200);
-        trending.setMaxHeight(50);
+
+        Label bookmarks = new Label("Bookmarks");
+        bookmarks.setStyle("-fx-text-fill: #D4D4D4; -fx-font-weight: bold; -fx-font-size: 14px");
+        bookmarks.setPadding(new Insets(5, 0, 0, 0));
+        bookmarks.setOnMouseClicked(event -> {
+            bookmarks.setStyle("-fx-background-color: #BD2424; -fx-padding: 10px;");
+            System.out.println("ASSASA");
+            Bookmark bookmarkScene = new Bookmark(stage);
+            bookmarkScene.show();
+        });
+        bookmarks.setOnMouseEntered(event -> {
+            bookmarks.setStyle("-fx-text-fill: #BD2424; -fx-font-weight: bold; -fx-font-size: 14px");
+        });
+        bookmarks.setOnMouseExited(event -> {
+            bookmarks.setStyle("-fx-text-fill: #D4D4D4; -fx-font-weight: bold; -fx-font-size: 14px");
+        });
 
         Button logout = new Button("Logout");
         logout.setStyle("-fx-background-color: #BD2424; -fx-text-fill: #D4D4D4; -fx-font-weight: bold; -fx-font-size: 14px");
@@ -63,12 +74,12 @@ public class HomeScene {
         HBox logoutBox = new HBox();
         logoutBox.getChildren().add(logout);
         logoutBox.setAlignment(Pos. TOP_RIGHT);
-        logoutBox.setPadding(new Insets(-50, 20, 0, 0));
+        logoutBox.setPadding(new Insets(0, 0, 0, 460));
 
         HBox navbar = new HBox();
         navbar.setSpacing(30);
         navbar.setPadding(new Insets(20));
-        navbar.getChildren().addAll(labelapp, home, trending);
+        navbar.getChildren().addAll(labelapp, home, bookmarks, logoutBox);
         navbar.setAlignment(Pos.TOP_LEFT);
         navbar.setStyle("-fx-background-color: black");
         navbar.setPrefWidth(900);
@@ -403,7 +414,7 @@ public class HomeScene {
         // TAMPILAN SEMUA LAYOUT
         VBox layout = new VBox();
         layout.setStyle("-fx-background-color: #101010");
-        layout.getChildren().addAll(navbar,logoutBox, kategori1, scroll1, kategori2, scroll2);
+        layout.getChildren().addAll(navbar, kategori1, scroll1, kategori2, scroll2);
 
         ScrollPane scrollPane = new ScrollPane(layout);
         scrollPane.setFitToWidth(true); 
