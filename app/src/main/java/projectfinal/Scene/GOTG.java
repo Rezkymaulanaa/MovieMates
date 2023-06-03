@@ -17,7 +17,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
-import javafx.util.Duration;
+// import javafx.util.Duration;
 
 public class GOTG {
     private Stage stage;
@@ -84,7 +84,7 @@ public class GOTG {
         root.getChildren().addAll(titleLabel, detaiLabel, synopsisLabel, genreLabel);
 
         // POSTER 
-        Image image2 = new Image("D:/IMG Poster Film/Poster GOTG.jpg");
+        Image image2 = new Image(getClass().getClassLoader().getResourceAsStream("images/Poster_GOTG.jpg"));
         ImageView imageView2 = new ImageView(image2);
         imageView2.setTranslateX(-75);
         imageView2.setTranslateY(30);
@@ -162,11 +162,10 @@ public class GOTG {
         label.setAlignment(Pos.CENTER);
         label.setPadding(new Insets(-45, 0, 0, -250));
         // Membuat timeline untuk mengatur durasi notifikasi
-        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(3), event -> {
-            label.setVisible(false);
-        }));
-        timeline.setCycleCount(1);
-        timeline.play();
+        // Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(3)event -> {
+        //     label.setVisible(false);
+        // }));
+        // timeline.setCycleCount(1);
+        // timeline.play();
     }
-
 }

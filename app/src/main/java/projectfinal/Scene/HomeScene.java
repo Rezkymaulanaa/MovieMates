@@ -69,7 +69,7 @@ public class HomeScene {
         labelGOTG.setStyle("-fx-text-fill: #D4D4D4; -fx-font-weight: Bold; -fx-font-size: 13px");
         labelGOTG.setPadding(new Insets(0, 0, 0, 5));
         
-        Image image1 = new Image("D:/IMG Poster FILM/Poster GOTG.jpg");
+        Image image1 = new Image(getClass().getClassLoader().getResourceAsStream("images/Poster_GOTG.jpg"));
         ImageView imageView1 = new ImageView(image1);
         imageView1.setFitHeight(225);
         imageView1.setFitWidth(150);
@@ -92,7 +92,7 @@ public class HomeScene {
         labelEndgame.setStyle("-fx-text-fill: #D4D4D4; -fx-font-weight: Bold; -fx-font-size: 13px");
         labelEndgame.setPadding(new Insets(0, 0, 0, 5));
 
-        Image image2 = new Image("D:/IMG Poster FILM/Poster Endgame.jpg");
+        Image image2 = new Image(getClass().getClassLoader().getResourceAsStream("images/Poster_Endgame.jpg"));
         ImageView imageView2 = new ImageView(image2);
         imageView2.setFitHeight(225);
         imageView2.setFitWidth(150);
@@ -115,7 +115,7 @@ public class HomeScene {
         labelTitanic.setStyle("-fx-text-fill: #D4D4D4; -fx-font-weight: Bold; -fx-font-size: 13px");
         labelTitanic.setPadding(new Insets(0, 0, 0, 5));
 
-        Image image3 = new Image("D:/IMG Poster FILM/Poster Titanic.jpg");
+        Image image3 = new Image(getClass().getClassLoader().getResourceAsStream("images/Poster_Titanic.jpg"));
         ImageView imageView3 = new ImageView(image3);
         imageView3.setFitHeight(225);
         imageView3.setFitWidth(150);
@@ -139,7 +139,7 @@ public class HomeScene {
         labelTWD.setStyle("-fx-text-fill: #D4D4D4; -fx-font-weight: Bold; -fx-font-size: 13px");
         labelTWD.setPadding(new Insets(0, 0, 0, 5));
 
-        Image image4 = new Image("D:/IMG Poster FILM/Poster The Walking Dead.jpg");
+        Image image4 = new Image(getClass().getClassLoader().getResourceAsStream("images/Poster_The_Walking_Dead.jpg"));
         ImageView imageView4 = new ImageView(image4);
         imageView4.setFitHeight(225);
         imageView4.setFitWidth(150);
@@ -162,7 +162,7 @@ public class HomeScene {
         labelToystory.setStyle("-fx-text-fill: #D4D4D4; -fx-font-weight: Bold; -fx-font-size: 13px");
         labelToystory.setPadding(new Insets(0, 0, 0, 5));
 
-        Image image5 = new Image("D:/IMG Poster FILM/Poster ToyStory4.jpg");
+        Image image5 = new Image(getClass().getClassLoader().getResourceAsStream("images/Poster_ToyStory4.jpg"));
         ImageView imageView5 = new ImageView(image5);
         imageView5.setFitHeight(225);
         imageView5.setFitWidth(150);
@@ -185,7 +185,7 @@ public class HomeScene {
         labelAvatar.setStyle("-fx-text-fill: #D4D4D4; -fx-font-weight: Bold; -fx-font-size: 13px");
         labelAvatar.setPadding(new Insets(0, 0, 0, 5));
 
-        Image image6 = new Image("D:/IMG Poster FILM/Poster Avatar.jpg");
+        Image image6 = new Image(getClass().getClassLoader().getResourceAsStream("images/Poster_Avatar.jpg"));
         ImageView imageView6 = new ImageView(image6);
         imageView6.setFitHeight(225);
         imageView6.setFitWidth(150);
@@ -207,7 +207,7 @@ public class HomeScene {
         labelLionking.setStyle("-fx-text-fill: #D4D4D4; -fx-font-weight: Bold; -fx-font-size: 13px");
         labelLionking.setPadding(new Insets(0, 0, 0, 5));
 
-        Image image7 = new Image("D:/IMG Poster FILM/Poster Lion King.jpg");
+        Image image7 = new Image(getClass().getClassLoader().getResourceAsStream("images/Poster_Lion_King.jpg"));
         ImageView imageView7 = new ImageView(image7);
         imageView7.setFitHeight(225);
         imageView7.setFitWidth(150);
@@ -246,7 +246,7 @@ public class HomeScene {
         labelAadc.setStyle("-fx-text-fill: #D4D4D4; -fx-font-weight: Bold; -fx-font-size: 13px");
         labelAadc.setPadding(new Insets(0, 0, 0, 5));
 
-        Image img1 = new Image("D:/IMG Poster FILM/Poster Ada Apa Dengan Cinta.jpg");
+        Image img1 = new Image(getClass().getClassLoader().getResourceAsStream("images/Poster_Ada_Apa_Dengan_Cinta.jpg"));
         ImageView imgView1 = new ImageView(img1);
         imgView1.setFitHeight(150);
         imgView1.setFitWidth(225);
@@ -269,7 +269,7 @@ public class HomeScene {
         labelHabibie.setStyle("-fx-text-fill: #D4D4D4; -fx-font-weight: Bold; -fx-font-size: 13px");
         labelHabibie.setPadding(new Insets(0, 0, 0, 5));
 
-        Image img2 = new Image("D:/IMG Poster FILM/Poster Habibie Ainun 3.jpg");
+        Image img2 = new Image(getClass().getClassLoader().getResourceAsStream("images/Poster_Habibie_Ainun_3.jpg"));
         ImageView imgView2 = new ImageView(img2);
         imgView2.setFitHeight(150);
         imgView2.setFitWidth(225);
@@ -292,7 +292,7 @@ public class HomeScene {
         labelKkr.setStyle("-fx-text-fill: #D4D4D4; -fx-font-weight: Bold; -fx-font-size: 13px");
         labelKkr.setPadding(new Insets(0, 0, 0, 5));
 
-        Image img3 = new Image("D:/IMG Poster FILM/Poster Kukira Kau Rumah.jpg");
+        Image img3 = new Image(getClass().getClassLoader().getResourceAsStream("images/Poster_Kukira_kau_Rumah.jpg"));
         ImageView imgView3 = new ImageView(img3);
         imgView3.setFitHeight(150);
         imgView3.setFitWidth(225);
@@ -315,7 +315,7 @@ public class HomeScene {
         label5cm.setStyle("-fx-text-fill: #D4D4D4; -fx-font-weight: Bold; -fx-font-size: 13px");
         label5cm.setPadding(new Insets(0, 0, 0, 5));
 
-        Image img4 = new Image("D:/IMG Poster FILM/Poster 5Cm.jpg");
+        Image img4 = new Image(getClass().getClassLoader().getResourceAsStream("images/Poster_5Cm.jpg"));
         ImageView imgView4 = new ImageView(img4);
         imgView4.setFitHeight(150);
         imgView4.setFitWidth(225);
@@ -338,7 +338,7 @@ public class HomeScene {
         labelPengabdi.setStyle("-fx-text-fill: #D4D4D4; -fx-font-weight: Bold; -fx-font-size: 13px");
         labelPengabdi.setPadding(new Insets(0, 0, 0, 5));
 
-        Image img5 = new Image("D:/IMG Poster FILM/Poster Pengabdi Setan.jpg");
+        Image img5 = new Image(getClass().getClassLoader().getResourceAsStream("images/Poster_Pengabdi_Setan.jpg"));
         ImageView imgView5 = new ImageView(img5);
         imgView5.setFitHeight(150);
         imgView5.setFitWidth(225);
