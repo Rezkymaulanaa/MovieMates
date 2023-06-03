@@ -1,7 +1,11 @@
 package projectfinal.Scene;
 
 import java.net.URI;
+import java.time.Duration;
 import java.awt.Desktop;
+
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -13,6 +17,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 public class GOTG {
     private Stage stage;
@@ -109,7 +114,7 @@ public class GOTG {
             homeScene.show();
         });
         VBox vBox = new VBox();
-        vBox.setPadding(new Insets(35, 0, 0 , 30));
+        vBox.setPadding(new Insets(-25, 0, 0 , 30));
         vBox.getChildren().add(buttonback);
 
         // Button Tonton
@@ -125,9 +130,19 @@ public class GOTG {
                 ex.printStackTrace();
             }
         });
-        VBox vBox2 = new VBox();
+        
+        Label labelnotif = new Label();
+        labelnotif.setStyle("-fx-background-color: #D4D4D4; -fx-text-fill: #D4D4D4");
+        labelnotif.setVisible(false);
+
+        Button buttonbookmark = new Button("Bookmark");
+        buttonbookmark.setMaxHeight(50);
+        buttonbookmark.setMaxWidth(120);
+        buttonbookmark.setOnAction(event -> showNotif(labelnotif));
+
+        VBox vBox2 = new VBox(10);
         vBox2.setPadding(new Insets(50, 0, 0 , 685));
-        vBox2.getChildren().add(buttontonton);
+        vBox2.getChildren().addAll(buttontonton, buttonbookmark,labelnotif);
   
         // Layout Semua Item
         VBox layout = new VBox();
@@ -139,6 +154,19 @@ public class GOTG {
         stage.setTitle("CINEMATCH");
         stage.show();
     }
+
+
+    public void showNotif(Label label){
+        label.setText("Film Ditambahkan Ke Bookmark");
+        label.setVisible(true);
+        label.setAlignment(Pos.CENTER);
+        label.setPadding(new Insets(-45, 0, 0, -250));
+        // Membuat timeline untuk mengatur durasi notifikasi
+        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(3), event -> {
+            label.setVisible(false);
+        }));
+        timeline.setCycleCount(1);
+        timeline.play();
+    }
+
 }
-
-
