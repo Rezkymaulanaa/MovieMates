@@ -36,15 +36,34 @@ public class HomeScene {
         labelapp.setAlignment(Pos.TOP_LEFT);
 
         Button home = new Button("Home");
-        home.setStyle("-fx-background-color: #101010; -fx-text-fill: #D4D4D4");
-        home.setOnAction(V -> {
+        home.setStyle("-fx-background-color: black; -fx-text-fill: #BD2424; -fx-font-weight: bold; -fx-font-size: 14px");
+        home.setMaxWidth(200);
+        home.setMaxHeight(50);
+
+        Button trending = new Button("Trending");
+        trending.setStyle("-fx-background-color: black; -fx-text-fill: #D4D4D4; -fx-font-weight: bold; -fx-font-size: 14px");
+        trending.setMaxWidth(200);
+        trending.setMaxHeight(50);
+
+        Button logout = new Button("Logout");
+        logout.setStyle("-fx-background-color: #BD2424; -fx-text-fill: #D4D4D4; -fx-font-weight: bold; -fx-font-size: 14px");
+        logout.setMaxWidth(100);
+        logout.setMaxHeight(0);
+        logout.setOnMouseEntered(event -> {
+            logout.setStyle("-fx-background-color: #8F0B1F; -fx-text-fill: #D4D4D4; -fx-font-weight: bold; -fx-font-size: 14px");
+        });
+        logout.setOnMouseExited(event -> {
+            logout.setStyle("-fx-background-color: #BD2424; -fx-text-fill: #D4D4D4; -fx-font-weight: bold; -fx-font-size: 14px");
+        });
+        logout.setOnAction(V -> {
             MainScene mainScene = new MainScene(stage);
             mainScene.show();
         });
 
-        Button trending = new Button("Trending");
-        trending.setStyle("-fx-background-color: #101010; -fx-text-fill: #D4D4D4");
-        trending.setOnAction(e -> System.out.println("Genre button clicked"));
+        HBox logoutBox = new HBox();
+        logoutBox.getChildren().add(logout);
+        logoutBox.setAlignment(Pos. TOP_RIGHT);
+        logoutBox.setPadding(new Insets(-50, 20, 0, 0));
 
         HBox navbar = new HBox();
         navbar.setSpacing(30);
@@ -227,8 +246,17 @@ public class HomeScene {
         // TAMPILAN LAYOUT KATEGORI 1
         HBox hBox2 = new HBox();
         hBox2.setSpacing(15);
+        hBox2.setStyle("-fx-background-color: #101010");
+
         hBox2.setPadding(new Insets(20));
         hBox2.getChildren().addAll(vBox1, vBox2, vBox3, vBox4, vBox5, vBox6, vBox7);
+
+        ScrollPane scroll1 = new ScrollPane(hBox2);
+        scroll1.setStyle("-fx-background-color: #101010");
+        scroll1.setBackground(null);
+        scroll1.setMinHeight(315);
+        scroll1.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        scroll1.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);  
 
 
 
@@ -360,17 +388,27 @@ public class HomeScene {
         // TAMPILAN LAYOUT KATEGORI 2
         HBox hBox3 = new HBox();
         hBox3.setSpacing(10);
+        hBox3.setStyle("-fx-background-color: #101010");
         hBox3.setPadding(new Insets(20));
         hBox3.getChildren().addAll(vBox8, vBox9, vBox10, vBox11, vBox12);
+
+        ScrollPane scroll2 = new ScrollPane(hBox3);
+        scroll2.setStyle("-fx-background-color: #101010");
+        scroll2.setBackground(null);
+        scroll2.setMinHeight(220);
+        scroll2.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        scroll2.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER); 
 
 
         // TAMPILAN SEMUA LAYOUT
         VBox layout = new VBox();
         layout.setStyle("-fx-background-color: #101010");
-        layout.getChildren().addAll(navbar, kategori1, hBox2, kategori2, hBox3);
+        layout.getChildren().addAll(navbar,logoutBox, kategori1, scroll1, kategori2, scroll2);
 
         ScrollPane scrollPane = new ScrollPane(layout);
-        scrollPane.setFitToWidth(true);   
+        scrollPane.setFitToWidth(true); 
+        scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        scrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);  
 
         Scene scene = new Scene(scrollPane , 960, 540);
         stage.setScene(scene);

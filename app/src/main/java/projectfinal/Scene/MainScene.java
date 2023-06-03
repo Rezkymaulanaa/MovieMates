@@ -43,7 +43,13 @@ public class MainScene {
         Button start = new Button("S T A R T");
         start.setMaxWidth(200);
         start.setMaxHeight(50);
-        start.setStyle("-fx-background-color: #BD2424; -fx-text-fill: #D4D4D4; -fx-font-weight: bold");
+        start.setStyle("-fx-background-color: #BD2424; -fx-text-fill: #D4D4D4; -fx-font-weight: bold; -fx-font-size: 14px");
+        start.setOnMouseEntered(event -> {
+            start.setStyle("-fx-background-color: #8F0B1F; -fx-text-fill: #D4D4D4; -fx-font-weight: bold; -fx-font-size: 14px");
+        });
+        start.setOnMouseExited(event -> {
+            start.setStyle("-fx-background-color: #BD2424; -fx-text-fill: #D4D4D4; -fx-font-weight: bold; -fx-font-size: 14px");
+        });
         start.setOnAction(action -> {
             HomeScene homeScene = new HomeScene(stage);
             homeScene.show();

@@ -33,17 +33,41 @@ public class PengabdiSetan {
         labelapp.getChildren().addAll(labeljudul,labeljudul2);
         labelapp.setAlignment(Pos.TOP_LEFT);
 
-        Button home = new Button("Home");
-        home.setStyle("-fx-background-color: #101010; -fx-text-fill: white;");
-        home.setOnAction(e -> System.out.println("Home button clicked"));
-        Button trending = new Button("Trending");
-        trending.setStyle("-fx-background-color: #101010; -fx-text-fill: white;");
-        trending.setOnAction(e -> System.out.println("Genre button clicked"));
+        Label homeLabel = new Label("Home");
+        homeLabel.setStyle("-fx-text-fill: #D4D4D4; -fx-font-weight: bold; -fx-font-size: 14px");
+        homeLabel.setPadding(new Insets(5, 0, 0, 0));
+        homeLabel.setOnMouseClicked(event -> {
+            homeLabel.setStyle("-fx-background-color: #BD2424; -fx-padding: 10px;");
+            HomeScene homeScene = new HomeScene(stage);
+            homeScene.show();
+        });
+        homeLabel.setOnMouseEntered(event -> {
+            homeLabel.setStyle("-fx-text-fill: #BD2424; -fx-font-weight: bold; -fx-font-size: 14px");
+        });
+        homeLabel.setOnMouseExited(event -> {
+            homeLabel.setStyle("-fx-text-fill: #D4D4D4; -fx-font-weight: bold; -fx-font-size: 14px");
+        });
+        
+
+        Label trendinglLabel = new Label("Trending");
+        trendinglLabel.setStyle("-fx-text-fill: #D4D4D4; -fx-font-weight: bold; -fx-font-size: 14px");
+        trendinglLabel.setPadding(new Insets(5, 0, 0, 0));
+        trendinglLabel.setOnMouseClicked(event -> {
+            trendinglLabel.setStyle("-fx-background-color: #BD2424; -fx-padding: 10px;");
+            HomeScene homeScene = new HomeScene(stage);
+            homeScene.show();
+        });
+        trendinglLabel.setOnMouseEntered(event -> {
+            trendinglLabel.setStyle("-fx-text-fill: #BD2424; -fx-font-weight: bold; -fx-font-size: 14px");
+        });
+        trendinglLabel.setOnMouseExited(event -> {
+            trendinglLabel.setStyle("-fx-text-fill: #D4D4D4; -fx-font-weight: bold; -fx-font-size: 14px");
+        });
 
         HBox navbar = new HBox();
-        navbar.setSpacing(30);
+        navbar.setSpacing(40);
         navbar.setPadding(new Insets(20));
-        navbar.getChildren().addAll(labelapp, home, trending);
+        navbar.getChildren().addAll(labelapp, homeLabel, trendinglLabel);
         navbar.setAlignment(Pos.TOP_LEFT);
         navbar.setStyle("-fx-background-color: black");
         navbar.setPrefWidth(900);
@@ -101,7 +125,14 @@ public class PengabdiSetan {
         gabungan.getChildren().addAll(root,imageView2);
 
         // Button Kembali 
-        Button buttonback = new Button("<-- Back");
+        Button buttonback = new Button("B A C K");
+        buttonback.setStyle("-fx-background-color: #F8F8F8; -fx-font-weight: bold");
+        buttonback.setOnMouseEntered(event -> {
+            buttonback.setStyle("-fx-background-color: #DBD5D6; -fx-font-weight: bold");
+        });
+        buttonback.setOnMouseExited(event -> {
+            buttonback.setStyle("-fx-background-color: #F8F8F8; -fx-font-weight: bold");
+        });
         buttonback.setMaxHeight(50);
         buttonback.setMaxWidth(120);
         buttonback.setOnAction(V -> {
@@ -114,6 +145,13 @@ public class PengabdiSetan {
 
         // Button Tonton
         Button buttontonton = new Button("Watch Trailer");
+        buttontonton.setStyle("-fx-background-color: #F8F8F8; -fx-font-weight: bold");
+        buttontonton.setOnMouseEntered(event -> {
+            buttontonton.setStyle("-fx-background-color: #DBD5D6; -fx-font-weight: bold");
+        });
+        buttontonton.setOnMouseExited(event -> {
+            buttontonton.setStyle("-fx-background-color: #F8F8F8; -fx-font-weight: bold");
+        });
         buttontonton.setMaxHeight(50);
         buttontonton.setMaxWidth(120);
         buttontonton.setOnAction(e -> {

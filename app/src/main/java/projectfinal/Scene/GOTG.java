@@ -1,11 +1,8 @@
 package projectfinal.Scene;
 
 import java.net.URI;
-import java.time.Duration;
 import java.awt.Desktop;
 
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -38,21 +35,44 @@ public class GOTG {
         labelapp.getChildren().addAll(labeljudul,labeljudul2);
         labelapp.setAlignment(Pos.TOP_LEFT);
 
-        Button home = new Button("Home");
-        home.setStyle("-fx-background-color: #101010; -fx-text-fill: white;");
-        home.setOnAction(e -> System.out.println("Home button clicked"));
-        Button trending = new Button("Trending");
-        trending.setStyle("-fx-background-color: #101010; -fx-text-fill: white;");
-        trending.setOnAction(e -> System.out.println("Genre button clicked"));
+        Label homeLabel = new Label("Home");
+        homeLabel.setStyle("-fx-text-fill: #D4D4D4; -fx-font-weight: bold; -fx-font-size: 14px");
+        homeLabel.setPadding(new Insets(5, 0, 0, 0));
+        homeLabel.setOnMouseClicked(event -> {
+            homeLabel.setStyle("-fx-background-color: #BD2424; -fx-padding: 10px;");
+            HomeScene homeScene = new HomeScene(stage);
+            homeScene.show();
+        });
+        homeLabel.setOnMouseEntered(event -> {
+            homeLabel.setStyle("-fx-text-fill: #BD2424; -fx-font-weight: bold; -fx-font-size: 14px");
+        });
+        homeLabel.setOnMouseExited(event -> {
+            homeLabel.setStyle("-fx-text-fill: #D4D4D4; -fx-font-weight: bold; -fx-font-size: 14px");
+        });
+        
+
+        Label trendinglLabel = new Label("Trending");
+        trendinglLabel.setStyle("-fx-text-fill: #D4D4D4; -fx-font-weight: bold; -fx-font-size: 14px");
+        trendinglLabel.setPadding(new Insets(5, 0, 0, 0));
+        trendinglLabel.setOnMouseClicked(event -> {
+            trendinglLabel.setStyle("-fx-background-color: #BD2424; -fx-padding: 10px;");
+            HomeScene homeScene = new HomeScene(stage);
+            homeScene.show();
+        });
+        trendinglLabel.setOnMouseEntered(event -> {
+            trendinglLabel.setStyle("-fx-text-fill: #BD2424; -fx-font-weight: bold; -fx-font-size: 14px");
+        });
+        trendinglLabel.setOnMouseExited(event -> {
+            trendinglLabel.setStyle("-fx-text-fill: #D4D4D4; -fx-font-weight: bold; -fx-font-size: 14px");
+        });
 
         HBox navbar = new HBox();
-        navbar.setSpacing(30);
+        navbar.setSpacing(40);
         navbar.setPadding(new Insets(20));
-        navbar.getChildren().addAll(labelapp, home, trending);
+        navbar.getChildren().addAll(labelapp, homeLabel, trendinglLabel);
         navbar.setAlignment(Pos.TOP_LEFT);
         navbar.setStyle("-fx-background-color: black");
         navbar.setPrefWidth(900);
-
 
         // Sinopsis film
         String movieTitle = "Guardian Of The Galaxy";
@@ -106,7 +126,14 @@ public class GOTG {
         gabungan.getChildren().addAll(root,imageView2);
 
         // Button Kembali 
-        Button buttonback = new Button("<-- Back");
+        Button buttonback = new Button("B A C K");
+        buttonback.setStyle("-fx-background-color: #F8F8F8; -fx-font-weight: bold");
+        buttonback.setOnMouseEntered(event -> {
+            buttonback.setStyle("-fx-background-color: #DBD5D6; -fx-font-weight: bold");
+        });
+        buttonback.setOnMouseExited(event -> {
+            buttonback.setStyle("-fx-background-color: #F8F8F8; -fx-font-weight: bold");
+        });
         buttonback.setMaxHeight(50);
         buttonback.setMaxWidth(120);
         buttonback.setOnAction(V -> {
@@ -114,11 +141,18 @@ public class GOTG {
             homeScene.show();
         });
         VBox vBox = new VBox();
-        vBox.setPadding(new Insets(-25, 0, 0 , 30));
+        vBox.setPadding(new Insets(10, 0, 0 , 30));
         vBox.getChildren().add(buttonback);
 
         // Button Tonton
         Button buttontonton = new Button("Watch Trailer");
+        buttontonton.setStyle("-fx-background-color: #F8F8F8; -fx-font-weight: bold");
+        buttontonton.setOnMouseEntered(event -> {
+            buttontonton.setStyle("-fx-background-color: #DBD5D6; -fx-font-weight: bold");
+        });
+        buttontonton.setOnMouseExited(event -> {
+            buttontonton.setStyle("-fx-background-color: #F8F8F8; -fx-font-weight: bold");
+        });
         buttontonton.setMaxHeight(50);
         buttontonton.setMaxWidth(120);
         buttontonton.setOnAction(e -> {
@@ -135,14 +169,14 @@ public class GOTG {
         labelnotif.setStyle("-fx-background-color: #D4D4D4; -fx-text-fill: #D4D4D4");
         labelnotif.setVisible(false);
 
-        Button buttonbookmark = new Button("Bookmark");
-        buttonbookmark.setMaxHeight(50);
-        buttonbookmark.setMaxWidth(120);
-        buttonbookmark.setOnAction(event -> showNotif(labelnotif));
+        // Button buttonbookmark = new Button("Bookmark");
+        // buttonbookmark.setMaxHeight(50);
+        // buttonbookmark.setMaxWidth(120);
+        // buttonbookmark.setOnAction(event -> showNotif(labelnotif));
 
         VBox vBox2 = new VBox(10);
         vBox2.setPadding(new Insets(50, 0, 0 , 685));
-        vBox2.getChildren().addAll(buttontonton, buttonbookmark,labelnotif);
+        vBox2.getChildren().addAll(buttontonton,labelnotif);
   
         // Layout Semua Item
         VBox layout = new VBox();
@@ -156,16 +190,16 @@ public class GOTG {
     }
 
 
-    public void showNotif(Label label){
-        label.setText("Film Ditambahkan Ke Bookmark");
-        label.setVisible(true);
-        label.setAlignment(Pos.CENTER);
-        label.setPadding(new Insets(-45, 0, 0, -250));
-        // Membuat timeline untuk mengatur durasi notifikasi
-        // Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(3)event -> {
-        //     label.setVisible(false);
-        // }));
-        // timeline.setCycleCount(1);
-        // timeline.play();
-    }
+    // public void showNotif(Label label){
+    //     label.setText("Film Ditambahkan Ke Bookmark");
+    //     label.setVisible(true);
+    //     label.setAlignment(Pos.CENTER);
+    //     label.setPadding(new Insets(-45, 0, 0, -250));
+    //     // Membuat timeline untuk mengatur durasi notifikasi
+    //     // Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(3)event -> {
+    //     //     label.setVisible(false);
+    //     // }));
+    //     // timeline.setCycleCount(1);
+    //     // timeline.play();
+    // }
 }
