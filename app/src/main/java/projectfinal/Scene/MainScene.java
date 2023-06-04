@@ -12,7 +12,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class MainScene {
+public class MainScene extends Startbutton {
     private Stage stage;
 
     public MainScene(Stage stage) {
@@ -61,7 +61,8 @@ public class MainScene {
         Label title2 = new Label("WATCH ANYWHERE, CANCEL ANYTIME.");
         title2.setStyle("-fx-text-fill: #D4D4D4; -fx-font-size: 15px; -fx-font-family: Times new roman");
 
-        Button start = new Button("S T A R T");
+        Button start = new Button();
+        start.setText(buttonstart());
         start.setMaxWidth(200);
         start.setMaxHeight(50);
         start.setStyle("-fx-background-color: #BD2424; -fx-text-fill: #D4D4D4; -fx-font-weight: bold; -fx-font-size: 14px");
@@ -94,5 +95,11 @@ public class MainScene {
         Scene scene = new Scene(img, 960, 540);
         stage.setScene(scene);
         stage.show();
+    }
+
+    @Override
+    String buttonstart() {
+        String a = "S T A R T";
+        return a;
     }
 }

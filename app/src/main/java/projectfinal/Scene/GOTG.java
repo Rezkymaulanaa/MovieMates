@@ -176,7 +176,18 @@ public class GOTG {
         buttonbookmark.setStyle("-fx-background-color: #F8F8F8; -fx-font-weight: bold");
         buttonbookmark.setMaxHeight(50);
         buttonbookmark.setMaxWidth(120);
-        buttonbookmark.setOnAction(event -> showNotif());
+        if (Bookmark.ListBookmark.contains("images/Poster_GOTG.jpg")){
+            buttonbookmark.setStyle("-fx-background-color: #C2C2C2; -fx-font-weight: bold");
+        }
+        buttonbookmark.setOnAction(event -> {
+            if (!Bookmark.ListBookmark.contains("images/Poster_GOTG.jpg")){
+            Bookmark.ListBookmark.add("images/Poster_GOTG.jpg");
+            buttonbookmark.setStyle("-fx-background-color: #C2C2C2; -fx-font-weight: bold");
+            showNotif();}
+            else{Bookmark.ListBookmark.remove("images/Poster_GOTG.jpg");
+            buttonbookmark.setStyle("-fx-background-color: #F8F8F8; -fx-font-weight: bold");
+            }
+        });
 
         VBox vBox2 = new VBox(10);
         vBox2.setPadding(new Insets(50, 0, 0 , 685));

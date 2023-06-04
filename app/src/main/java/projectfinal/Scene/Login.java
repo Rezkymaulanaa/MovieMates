@@ -91,15 +91,6 @@ public class Login {
         loginButton.setMaxWidth(250);
         loginButton.setMaxHeight(45);
         loginButton.setPrefHeight(45);
-        tfPassword.setOnKeyPressed(event -> {
-            if (event.getCode() == KeyCode.ENTER) {
-                navigateToOtherScene(); // Fungsi untuk melakukan navigasi ke scene lain
-            }
-        });
-        // Penanganan peristiwa saat tombol Enter ditekan pada Button
-        loginButton.setOnAction(event -> {
-            navigateToOtherScene(); // Fungsi untuk melakukan navigasi ke scene lain
-        });
         loginButton.setStyle("-fx-background-color: #BD2424; -fx-text-fill: #D4D4D4; -fx-font-weight: bold; -fx-font-size: 15px");
         loginButton.setOnMouseEntered(event -> {
             loginButton.setStyle("-fx-background-color: #8F0B1F; -fx-text-fill: #D4D4D4; -fx-font-weight: bold; -fx-font-size: 15px");
@@ -245,9 +236,5 @@ public class Login {
         Scene scene = new Scene(scrollPane, 960, 540);
         stage.setScene(scene);
         stage.show();
-    }
-    private void navigateToOtherScene() {
-        HomeScene homeScene = new HomeScene(stage);
-        homeScene.show();
     }
 }

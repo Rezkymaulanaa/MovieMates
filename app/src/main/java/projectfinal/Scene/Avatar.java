@@ -2,6 +2,9 @@ package projectfinal.Scene;
 
 import java.net.URI;
 import java.awt.Desktop;
+
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -13,9 +16,11 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 public class Avatar {
     private Stage stage;
+    private Label labelnotif;
 
     public Avatar(Stage stage){
         this.stage = stage;
@@ -140,7 +145,7 @@ public class Avatar {
             homeScene.show();
         });
         VBox vBox = new VBox();
-        vBox.setPadding(new Insets(35, 0, 0 , 30));
+        vBox.setPadding(new Insets(-30, 0, 0 , 30));
         vBox.getChildren().add(buttonback);
 
         // Button Tonton
@@ -163,9 +168,31 @@ public class Avatar {
                 ex.printStackTrace();
             }
         });
-        VBox vBox2 = new VBox();
+
+        labelnotif = new Label();
+        labelnotif.setStyle("-fx-text-fill: #D4D4D4; -fx-font-weight: bold;");
+        labelnotif.setVisible(false);
+
+        Button buttonbookmark = new Button("Bookmark");
+        buttonbookmark.setStyle("-fx-background-color: #F8F8F8; -fx-font-weight: bold");
+        buttonbookmark.setMaxHeight(50);
+        buttonbookmark.setMaxWidth(120);
+        if (Bookmark.ListBookmark.contains("images/Poster_Avatar.jpg")){
+            buttonbookmark.setStyle("-fx-background-color: #C2C2C2; -fx-font-weight: bold");
+        }
+        buttonbookmark.setOnAction(event -> {
+            if (!Bookmark.ListBookmark.contains("images/Poster_Avatar.jpg")){
+            Bookmark.ListBookmark.add("images/Poster_Avatar.jpg");
+            buttonbookmark.setStyle("-fx-background-color: #C2C2C2; -fx-font-weight: bold");
+            showNotif();}
+            else{Bookmark.ListBookmark.remove("images/Poster_Avatar.jpg");
+            buttonbookmark.setStyle("-fx-background-color: #F8F8F8; -fx-font-weight: bold");
+            }
+        });
+
+        VBox vBox2 = new VBox(10);
         vBox2.setPadding(new Insets(50, 0, 0 , 685));
-        vBox2.getChildren().add(buttontonton);
+        vBox2.getChildren().addAll(buttontonton, buttonbookmark, labelnotif);
   
         // Layout Semua Item
         VBox layout = new VBox();
@@ -176,5 +203,17 @@ public class Avatar {
         stage.setScene(scene);
         stage.setTitle("CINEMATCH");
         stage.show();
+    }
+    public void showNotif(){
+        labelnotif.setText("Film Ditambahkan Ke Bookmark");
+        labelnotif.setVisible(true);
+        labelnotif.setAlignment(Pos.BOTTOM_CENTER);
+        labelnotif.setPadding(new Insets(0, 0, 0, -30));
+        // Membuat timeline untuk mengatur durasi notifikasi
+        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(3),event -> {
+            labelnotif.setVisible(false);
+        }));
+        timeline.setCycleCount(1);
+        timeline.play();
     }
 }
