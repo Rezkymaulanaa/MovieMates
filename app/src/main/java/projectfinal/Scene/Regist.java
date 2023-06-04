@@ -19,7 +19,6 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyCode;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -112,16 +111,6 @@ public class Regist {
         saveButton.setMaxHeight(45);
         saveButton.setPrefHeight(45);
         saveButton.setStyle("-fx-background-color: #BD2424; -fx-text-fill: #D4D4D4; -fx-font-weight: bold; -fx-font-size: 15px");
-        tfPassword.setOnKeyPressed(event -> {
-            if (event.getCode() == KeyCode.ENTER) {
-                navigateToOtherScene(); // Fungsi untuk melakukan navigasi ke scene lain
-            }
-        });
-        // Penanganan peristiwa saat tombol Enter ditekan pada Button
-        saveButton.setOnAction(event -> {
-            navigateToOtherScene(); // Fungsi untuk melakukan navigasi ke scene lain
-        });
-
         saveButton.setOnMouseEntered(event -> {
             saveButton.setStyle("-fx-background-color: #8F0B1F; -fx-text-fill: #D4D4D4; -fx-font-weight: bold; -fx-font-size: 15px");
         });
@@ -243,10 +232,5 @@ public class Regist {
         Scene scene = new Scene(scrollPane, 960, 540);
         stage.setScene(scene);
         stage.show();
-    }
-
-    private void navigateToOtherScene() {
-        Login login = new Login(stage);
-        login.show();
     }
 }
