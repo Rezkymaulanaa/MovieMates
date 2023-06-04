@@ -640,7 +640,6 @@ public class HomeScene {
         scroll2.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         scroll2.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER); 
 
-
         // TAMPILAN SEMUA LAYOUT
         VBox layout = new VBox();
         layout.setStyle("-fx-background-color: #101010");

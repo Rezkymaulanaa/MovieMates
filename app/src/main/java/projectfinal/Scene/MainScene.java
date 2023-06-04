@@ -35,6 +35,27 @@ public class MainScene {
         labelapp.setAlignment(Pos.TOP_LEFT);
         labelapp.setPadding(new Insets(20, 0, 0, 30));
 
+        // ini adalah Tombol untuk Masuk
+        Button signin = new Button("Sign in");
+        signin.setMaxHeight(0);
+        signin.setMaxWidth(100);
+        signin.setStyle("-fx-background-color: #BD2424; -fx-text-fill: #D4D4D4; -fx-font-weight: bold; -fx-font-size: 14px");
+        signin.setOnMouseEntered(event -> {
+            signin.setStyle("-fx-background-color: #8F0B1F; -fx-text-fill: #D4D4D4; -fx-font-weight: bold; -fx-font-size: 14px");
+        });
+        signin.setOnMouseExited(event -> {
+            signin.setStyle("-fx-background-color: #BD2424; -fx-text-fill: #D4D4D4; -fx-font-weight: bold; -fx-font-size: 14px");
+        });
+        signin.setOnAction(v -> {
+            Login login = new Login(stage);
+            login.show();
+        });
+
+        HBox signinBox = new HBox();
+        signinBox.getChildren().add(signin);
+        signinBox.setAlignment(Pos. TOP_RIGHT);
+        signinBox.setPadding(new Insets(-35, 20, 0, 0));
+
         Label title = new Label("See what's next.");
         title.setStyle("-fx-text-fill: #D4D4D4; -fx-font-size: 40px; -fx-font-family: Arial; -fx-font-weight: bold;");
         Label title2 = new Label("WATCH ANYWHERE, CANCEL ANYTIME.");
@@ -51,15 +72,14 @@ public class MainScene {
             start.setStyle("-fx-background-color: #BD2424; -fx-text-fill: #D4D4D4; -fx-font-weight: bold; -fx-font-size: 14px");
         });
         start.setOnAction(action -> {
-            HomeScene homeScene = new HomeScene(stage);
-            homeScene.show();
+            Login login = new Login(stage);
+            login.show();
         });
 
 
         Image backImage = new Image(getClass().getClassLoader().getResourceAsStream("images/Background_Mainscene.jpg"));
         ImageView iView = new ImageView(backImage);
         img.getChildren().add(iView);
-        iView.setOpacity(0.9);
 
 
         VBox content = new VBox(title,title2, start);
@@ -68,7 +88,7 @@ public class MainScene {
         content.setPadding(new Insets(145,20, 0, 40));
 
         VBox layout = new VBox();
-        layout.getChildren().addAll(labelapp, content);
+        layout.getChildren().addAll(labelapp, signinBox, content);
         img.getChildren().addAll(layout);
 
         Scene scene = new Scene(img, 960, 540);
