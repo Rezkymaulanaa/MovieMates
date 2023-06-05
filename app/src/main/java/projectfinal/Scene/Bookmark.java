@@ -1,9 +1,6 @@
 package projectfinal.Scene;
 
 
-
-
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -67,14 +64,23 @@ public class Bookmark {
         navbar.setAlignment(Pos.TOP_LEFT);
         navbar.setStyle("-fx-background-color: black");
         navbar.setPrefWidth(900);
+        
+        Label watchlist = new Label("Watch List");
+        watchlist.setStyle("-fx-text-fill: #D4D4D4; -fx-font-size: 20px; -fx-font-weight: Bold");
+        HBox hWatchlist = new HBox();
+        hWatchlist.setStyle("-fx-background-color: #101010");
+        hWatchlist.getChildren().add(watchlist);
+        hWatchlist.setAlignment(Pos. TOP_LEFT);
+        hWatchlist.setPadding(new Insets(20,20, 0, 20));
+
 
         HBox hMovie = new HBox();
-        hMovie.setPrefHeight(540);
         hMovie.setStyle("-fx-background-color: #101010");
-        hMovie.setAlignment(Pos. TOP_LEFT);
-            hMovie.setSpacing(20);
-            hMovie.setPadding((new Insets(50, 0, 0, 20)));
+        hMovie.setAlignment(Pos. TOP_CENTER);
+        hMovie.setSpacing(15);
+        hMovie.setPadding((new Insets(20,20,20,40)));
         for (String string : ListBookmark) {
+            hMovie.setStyle("-fx-background-color: #101010");
             Image img1 = new Image(getClass().getClassLoader().getResourceAsStream(string));
             ImageView imgView1 = new ImageView(img1);
             imgView1.setFitHeight(225);
@@ -107,22 +113,22 @@ public class Bookmark {
             hMovie.getChildren().add(imgView1);
         }
 
+        ScrollPane scroll1 = new ScrollPane(hMovie);
+        scroll1.setStyle("-fx-background-color: #101010");
+        scroll1.setFitToHeight(true);
+        scroll1.setFitToWidth(true);
+        scroll1.setMinWidth(960);
+        scroll1.setMaxWidth(960);
+        scroll1.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        scroll1.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+
         
         // Layout Semua Item
         VBox layout = new VBox();
-        layout.getChildren().addAll(navbar,hMovie);
+        layout.getChildren().addAll(navbar,hWatchlist, scroll1);
         layout.setStyle("-fx-background-color: #101010");
 
-        
-        ScrollPane scrollPane = new ScrollPane(layout);
-        scrollPane.setFitToWidth(true); 
-        scrollPane.setStyle("-fx-background-color: #101010");
-        scrollPane.setMinHeight(540);
-        scrollPane.setBackground(null);
-        scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
-        scrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
-
-        Scene scene = new Scene(scrollPane,960,540);
+        Scene scene = new Scene(layout,960,540);
         stage.setScene(scene);
         stage.setTitle("CINEMATCH");
         stage.show();

@@ -3,10 +3,9 @@ package projectfinal.Scene;
 import java.net.URI;
 import java.awt.Desktop;
 
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Cursor;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -16,11 +15,9 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 
-public class KukiraKauRumah {
+public class KukiraKauRumah extends NotifBookmark{
     private Stage stage;
-    private Label labelnotif;
 
     public KukiraKauRumah(Stage stage){
         this.stage = stage;
@@ -54,25 +51,45 @@ public class KukiraKauRumah {
         });
         
 
-        Label bookmarklLabel = new Label("Bookmarks");
-        bookmarklLabel.setStyle("-fx-text-fill: #D4D4D4; -fx-font-weight: bold; -fx-font-size: 14px");
-        bookmarklLabel.setPadding(new Insets(5, 0, 0, 0));
-        bookmarklLabel.setOnMouseClicked(event -> {
-            bookmarklLabel.setStyle("-fx-background-color: #BD2424; -fx-padding: 10px;");
+        Label bookmarkLabel = new Label("Bookmarks");
+        bookmarkLabel.setStyle("-fx-text-fill: #D4D4D4; -fx-font-weight: bold; -fx-font-size: 14px");
+        bookmarkLabel.setPadding(new Insets(5, 0, 0, 0));
+        bookmarkLabel.setOnMouseClicked(event -> {
+            bookmarkLabel.setStyle("-fx-background-color: #BD2424; -fx-padding: 10px;");
             Bookmark bookmark = new Bookmark(stage);
             bookmark.show();
         });
-        bookmarklLabel.setOnMouseEntered(event -> {
-            bookmarklLabel.setStyle("-fx-text-fill: #BD2424; -fx-font-weight: bold; -fx-font-size: 14px");
+        bookmarkLabel.setOnMouseEntered(event -> {
+            bookmarkLabel.setStyle("-fx-text-fill: #BD2424; -fx-font-weight: bold; -fx-font-size: 14px");
         });
-        bookmarklLabel.setOnMouseExited(event -> {
-            bookmarklLabel.setStyle("-fx-text-fill: #D4D4D4; -fx-font-weight: bold; -fx-font-size: 14px");
+        bookmarkLabel.setOnMouseExited(event -> {
+            bookmarkLabel.setStyle("-fx-text-fill: #D4D4D4; -fx-font-weight: bold; -fx-font-size: 14px");
         });
+
+        Button logout = new Button("Logout");
+        logout.setStyle("-fx-background-color: #BD2424; -fx-text-fill: #D4D4D4; -fx-font-weight: bold; -fx-font-size: 14px");
+        logout.setMaxWidth(100);
+        logout.setMaxHeight(0);
+        logout.setOnMouseEntered(event -> {
+            logout.setStyle("-fx-background-color: #8F0B1F; -fx-text-fill: #D4D4D4; -fx-font-weight: bold; -fx-font-size: 14px");
+        });
+        logout.setOnMouseExited(event -> {
+            logout.setStyle("-fx-background-color: #BD2424; -fx-text-fill: #D4D4D4; -fx-font-weight: bold; -fx-font-size: 14px");
+        });
+        logout.setOnAction(V -> {
+            MainScene mainScene = new MainScene(stage);
+            mainScene.show();
+        });
+
+        HBox logoutBox = new HBox();
+        logoutBox.getChildren().add(logout);
+        logoutBox.setAlignment(Pos. TOP_RIGHT);
+        logoutBox.setPadding(new Insets(0, 0, 0, 450));
 
         HBox navbar = new HBox();
         navbar.setSpacing(40);
         navbar.setPadding(new Insets(20));
-        navbar.getChildren().addAll(labelapp, homeLabel, bookmarklLabel);
+        navbar.getChildren().addAll(labelapp, homeLabel, bookmarkLabel, logoutBox);
         navbar.setAlignment(Pos.TOP_LEFT);
         navbar.setStyle("-fx-background-color: black");
         navbar.setPrefWidth(900);
@@ -177,6 +194,12 @@ public class KukiraKauRumah {
         buttonbookmark.setStyle("-fx-background-color: #F8F8F8; -fx-font-weight: bold");
         buttonbookmark.setMaxHeight(50);
         buttonbookmark.setMaxWidth(120);
+        buttonbookmark.setOnMouseEntered(event -> {
+            buttonbookmark.getScene().setCursor(Cursor. HAND);
+        });
+        buttonbookmark.setOnMouseExited(event -> {
+            buttonbookmark.getScene().setCursor(Cursor. DEFAULT);
+        });
         if (Bookmark.ListBookmark.contains("images/Poster_Kukira_Kau_Rumah.jpg")){
             buttonbookmark.setStyle("-fx-background-color: #C2C2C2; -fx-font-weight: bold");
         }
@@ -184,9 +207,10 @@ public class KukiraKauRumah {
             if (!Bookmark.ListBookmark.contains("images/Poster_Kukira_Kau_Rumah.jpg")){
             Bookmark.ListBookmark.add("images/Poster_Kukira_Kau_Rumah.jpg");
             buttonbookmark.setStyle("-fx-background-color: #C2C2C2; -fx-font-weight: bold");
-            showNotif();}
+            notifShow();}
             else{Bookmark.ListBookmark.remove("images/Poster_Kukira_Kau_Rumah.jpg");
             buttonbookmark.setStyle("-fx-background-color: #F8F8F8; -fx-font-weight: bold");
+            notifRemove();
             }
         });
 
@@ -204,16 +228,9 @@ public class KukiraKauRumah {
         stage.setTitle("CINEMATCH");
         stage.show();
     }
-    public void showNotif(){
-        labelnotif.setText("Film Ditambahkan Ke Bookmark");
-        labelnotif.setVisible(true);
-        labelnotif.setAlignment(Pos.BOTTOM_CENTER);
-        labelnotif.setPadding(new Insets(0, 0, 0, -30));
-        // Membuat timeline untuk mengatur durasi notifikasi
-        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(3),event -> {
-            labelnotif.setVisible(false);
-        }));
-        timeline.setCycleCount(1);
-        timeline.play();
+
+    @Override
+    public void notifShow() {
+        super.notifShow();
     }
 }

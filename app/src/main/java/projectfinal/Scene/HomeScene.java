@@ -45,7 +45,6 @@ public class HomeScene {
         bookmarks.setPadding(new Insets(5, 0, 0, 0));
         bookmarks.setOnMouseClicked(event -> {
             bookmarks.setStyle("-fx-background-color: #BD2424; -fx-padding: 10px;");
-            System.out.println("ASSASA");
             Bookmark bookmarkScene = new Bookmark(stage);
             bookmarkScene.show();
         });
@@ -393,7 +392,6 @@ public class HomeScene {
         HBox hBox2 = new HBox();
         hBox2.setSpacing(15);
         hBox2.setStyle("-fx-background-color: #101010");
-
         hBox2.setPadding(new Insets(20));
         hBox2.getChildren().addAll(vBox1, vBox2, vBox3, vBox4, vBox5, vBox6, vBox7);
 
@@ -403,7 +401,6 @@ public class HomeScene {
         scroll1.setMinHeight(315);
         scroll1.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         scroll1.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);  
-
 
 
         // Kategori 2

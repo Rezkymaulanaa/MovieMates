@@ -14,6 +14,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -65,7 +66,7 @@ public class Login {
         tfUsername.setAlignment(Pos.CENTER_LEFT);
         tfUsername.setPadding(new Insets(0, 0, 0, 20));
         
-        TextField tfPassword = new TextField();
+        PasswordField tfPassword = new PasswordField();
         tfPassword.setPromptText("Password");
         tfPassword.setStyle("-fx-font-size: 15px; -fx-text-fill: #D4D4D4; -fx-background-color: #404040; -fx-font-family: Arial");
         tfPassword.setPrefSize(250, 45);
